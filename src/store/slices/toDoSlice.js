@@ -12,11 +12,17 @@ const toDoSlice = createSlice({
            return {toDoList: 
             [...state.toDoList, 
                 {data: action.payload}]}
-        }
+        },
+        removeAll(state,action){
+            return initialState;
+         },
+         deleteItem(state,action){             
+             return action.payload;
+         }
 
     }
 })
 
 
-export const {addItem} = toDoSlice.actions;
+export const {addItem,removeAll,deleteItem} = toDoSlice.actions;
 export default toDoSlice.reducer;

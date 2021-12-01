@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <h1>Add your Daily Task</h1>
+    <h1>What's the plan for today</h1>
     <ToDoList/>
     </>
   );
