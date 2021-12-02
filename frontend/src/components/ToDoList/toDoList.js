@@ -68,11 +68,11 @@ const ToDoList = (props) => {
         <div>
 
             <div className="todolist-form">
+            <form onSubmit={handleOnSubmit}>
                 <input className="todolist-form__input" type="text" placeholder="Add tasks here.." value={state}
                     onChange={handleInputChange} />
                 <input className="todolist-form__submit" type="submit" value="Add" ></input>
-                <input className="todolist-form__search" type="text" value={findValue} placeholder="Search Here.." onChange={handleFindItem} />
-                <form onSubmit={handleOnSubmit}>
+                <input className="todolist-form__search" type="text" value={findValue} placeholder="Search Here.." onChange={handleFindItem} />                
                 </form>
             </div>
             {
