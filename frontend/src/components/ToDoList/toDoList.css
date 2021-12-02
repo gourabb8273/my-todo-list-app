@@ -49,9 +49,10 @@
 }
 
 .todolist-form__clear{
-    width:430px;
+    width:95%;
     margin-left: 5px;
     margin-bottom: 5px;
+    margin-top: 8px;
     height: 42px;
     border-radius: 2px;
     color: rgb(255, 255, 255);
