@@ -1,0 +1,14 @@
+.navbar-list__item{
+    background: rgb(56, 56, 129);
+    height: 60px;;
+    
+}
+
+.navbar-list__item h1{
+    margin: 0px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
+}

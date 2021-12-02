@@ -11,15 +11,15 @@ const toDoSlice = createSlice({
         addItem(state,action){
            return {toDoList: 
             [...state.toDoList, 
-                {data: action.payload}]}
+                {data: action.payload,
+                date: new Date().toLocaleDateString('en-GB')}]}
         },
         removeAll(state,action){
             return initialState;
          },
          deleteItem(state,action){             
              return action.payload;
-         }
-
+        }
     }
 })
 

@@ -1,8 +1,33 @@
 .todolist-form__input{
-    width:320px;
-    height: 50px;
+    width:410px;
+    height: 50px;    
     margin-bottom: 4px;
-    border-radius: 5px;
+    margin-top: 8px;
+    border-radius: 2px;
+    border: 2px solid rgba(0, 0, 0, 0.534);
+
+}
+::placeholder{
+    padding-left: 20px ;
+    font-size: large;
+}
+.todolist-form__input[type="text"]{
+    font-size: 20px;
+    /* font-family: serif; */
+
+}
+
+.todolist-form__search{
+    width: 95%;
+    height: 45px;;
+    margin-top: 6px;
+
+
+}
+.todolist-form__search[type="text"]{
+    font-size: 20px;
+    border-bottom: 2px solid grey;
+    /* font-family: serif; */
 
 }
 .todolist-form__submit{
@@ -10,16 +35,16 @@
     margin-left: 10px;
     margin-bottom: 5px;
     height: 55px;
-    border-radius: 5px;
+    border-radius: 2px;
     color: rgb(255, 255, 255);
-    background: rgb(128, 18, 18);
+    background: rgb(30, 136, 66);
     font-size: large;
     font-family: sans-serif;
-    border: 1px solid black;
+    
     
 }
 .todolist-form__submit:hover{
-    background: rgb(78, 39, 168);
+    background: rgb(29, 11, 71);
     color: rgb(241, 241, 248);
 }
 
@@ -28,7 +53,7 @@
     margin-left: 5px;
     margin-bottom: 5px;
     height: 42px;
-    border-radius: 5px;
+    border-radius: 2px;
     color: rgb(255, 255, 255);
     background: rgb(184, 6, 6);
     font-size: large;
@@ -43,7 +68,10 @@
 
 .todolist-task__items{
     display: flex;
-    margin-left: 450px;
+    margin-left: 100px;
+    /* border: 1px solid rgb(230, 210, 210); */
+    background: rgb(218, 189, 189);
+    margin: 8px;
     /* height: 54px;;
     margin: 2px 468px 2px 472px;
     border-radius: 4px;
@@ -59,5 +87,16 @@
     width: 80px;
     font-size: medium;
     font-style: bold;
-    background: rgb(216, 183, 183);
+    background: rgb(168, 20, 20);
+    color: white;
+    font-size: medium;
 } 
+.todolist-task__items h3{
+    margin-left: 15px; 
+    
+}
+.todolist-task__items h5{
+    margin-left: 15px; 
+    color: rgb(82, 79, 76);
+    font-style: italic;
+}
