@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addItem, removeAll, deleteItem } from '../../store/slices/toDoSlice';
+import "./toDoList.css"
 
 const ToDoList = (props) => {
     const initialState = {
@@ -41,24 +42,23 @@ const ToDoList = (props) => {
     function handleDeleteItem(key){        
         let newToDo =list.todo.toDoList.filter((val,ind)=> ind!==key)       
         dispatch(deleteItem({toDoList: newToDo}))
-        
+        // dispatch(deleteItem(key))
     }
 
     return (
 
         <div>
-            <div>
+            <div className="todolist-form">
                 <form onSubmit={handleOnSubmit}>
-                    <input type="text" placeholder="Add tasks.." value={state}
+                    <input className="todolist-form__input" type="text" placeholder="Add tasks.." value={state}
                         onChange={handleInputChange} />
-                    <input type="submit" value="Add" ></input>
+                    <input className="todolist-form__submit" type="submit" value="Add" ></input>
                 </form>
             </div>
             {
                 list.todo.toDoList.map((item, i) => {
                     return (
-                        <div key={i}>
-                            
+                        <div className="todolist-task__items" key={i}>                            
                             <h3>{item.data}</h3>
                             <button onClick={()=>handleDeleteItem(i)}>Delete</button>
                             
@@ -68,7 +68,7 @@ const ToDoList = (props) => {
                     )
                 })
             }
-            <button onClick={handleClearAll}>Clear All</button>
+            <button className="todolist-form__clear"  onClick={handleClearAll}>Clear All</button>
         </div>
     )
 }
