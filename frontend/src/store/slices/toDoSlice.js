@@ -8,13 +8,15 @@ const toDoSlice = createSlice({
     name: 'todolist',
     initialState,
     reducers:{
-        addItem(state,action){
+        addItem: (state,action)=>{
             // fetch('http://localhost:8080/api/list',{
             //     method: 'POST',
             //     body: "hey"
             // }).then(res=> res.text())
             //     .then(data=> console.log(data))
             //     .catch(err=> console.log(err))
+            const {todolist} =state
+            console.log(state);
            return {toDoList: 
             [...state.toDoList, 
                 {data: action.payload,
@@ -26,7 +28,9 @@ const toDoSlice = createSlice({
          deleteItem(state,action){             
              return action.payload;
         },
-        getItem(state,action){                         
+        getItem(state,action){  
+            debugger; 
+            console.log(state)                      ;
             return action.payload;
        }
     }

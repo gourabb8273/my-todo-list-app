@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button, ListGroup, ListGroupItem, Table } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { addItem, removeAll, deleteItem, getItem } from '../../store/slices/toDoSlice';
-import "./toDoList.css"
+import "./toDoList.css";
 
 function ToDoList(props) {
 
@@ -40,6 +44,7 @@ function ToDoList(props) {
         e.preventDefault();
         setState(e.target.value)
     }
+
     /**FUNCTION :handleClearAll
      * ACTION: Clear all the tasks
      **/
@@ -84,16 +89,23 @@ function ToDoList(props) {
 
                     .map((item, i) => {
                         return (
-                            <div className="todolist-task__items" key={i}>
-                                {/* <input type="checkbox" onChange={()=>handleCheckBox(i)}/>  */}
-                                <h3>{i + 1}. {item.data}</h3>
-                                <h5>created on {item.date}</h5>
-                                <button onClick={() => handleDeleteItem(i)}>Delete</button>
+                            <div className="list-group__container">
+                                <Table key={i} variant="white" className="list-group__task" striped bordered >
+                                    <tbody>
+                                        <tr>
+                                            <td>{i + 1}</td>
+                                            <td>{item.data}</td>
+                                            <td>{item.date}</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                                <FontAwesomeIcon className="list-group__icon" icon={faTrashAlt} onClick={() => handleDeleteItem(i)}></FontAwesomeIcon>
+                                {/* <Button className = "list-group__button" variant="danger"  onClick={() => handleDeleteItem(i)}>Delete</Button>         */}
                             </div>
                         )
                     })
             }
-            <button className="todolist-form__clear" onClick={handleClearAll}>Clear All</button>
+            <Button variant="danger" className="todolist-form__clear" onClick={handleClearAll}>Clear All</Button>
         </div>
     )
 }

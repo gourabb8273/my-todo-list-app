@@ -59,13 +59,13 @@
     background: rgb(184, 6, 6);
     font-size: large;
     font-family: sans-serif;
-    border: 1px solid black;
+    
     
 }
-.todolist-form__clear:hover{
+/* .todolist-form__clear:hover{
     background: rgb(163, 19, 19);
     color: rgb(241, 241, 248);
-}
+} */
 
 .todolist-task__items{
     display: flex;
@@ -100,4 +100,36 @@
     margin-left: 15px; 
     color: rgb(82, 79, 76);
     font-style: italic;
+}
+
+.list-group__task{
+    display: inline-flexbox;
+    width: 430px;;
+    margin: 3px;;
+    margin-left: 14px;;
+    
+}
+.list-group__button{
+  position:absolute;
+  color:white;
+  right: 420px;
+}
+.list-group__task tbody{
+    width: 20%;
+      
+  }
+.list-group__task tr{
+    padding: 0px;
+    margin: 0px;
+      
+  }
+
+  .list-group__container{
+      display: flex;
+  }
+
+  .list-group__icon{
+    margin-top: 15px;
+    margin-left: 25px;
+    
 }
