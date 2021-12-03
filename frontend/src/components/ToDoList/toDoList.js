@@ -7,16 +7,15 @@ import "./toDoList.css"
 function ToDoList(props) {
 
     //fetching Inital Data From Backend API
-    useEffect(()=>{
+    useEffect(() => {
         fetch('http://localhost:8080/api/list')
-        .then(res=>  res.text())
-        .then(data=>{
-            console.log(JSON.parse(data).dummyData)            
-            dispatch(getItem(JSON.parse(data).dummyData))
-        })
-        .catch(err=> console.log(err))
-    },[])
-   
+            .then(res => res.text())
+            .then(data => {
+                dispatch(getItem(JSON.parse(data).dummyData))
+            })
+            .catch(err => console.log(err))
+    }, [])
+
 
     const dispatch = useDispatch();
     const list = useSelector((state) => state)
@@ -66,18 +65,18 @@ function ToDoList(props) {
         e.preventDefault();
         let findKey = e.target.value;
         setFindValue(findKey)
-    }    
+    }
 
     return (
 
         <div>
 
             <div className="todolist-form">
-            <form onSubmit={handleOnSubmit}>
-                <input className="todolist-form__input" type="text" placeholder="Add tasks here.." value={state}
-                    onChange={handleInputChange} />
-                <input className="todolist-form__submit" type="submit" value="Add" ></input>
-                <input className="todolist-form__search" type="text" value={findValue} placeholder="Search Here.." onChange={handleFindItem} />                
+                <form onSubmit={handleOnSubmit}>
+                    <input className="todolist-form__input" type="text" placeholder="Add tasks here.." value={state}
+                        onChange={handleInputChange} />
+                    <input className="todolist-form__submit" type="submit" value="Add" ></input>
+                    <input className="todolist-form__search" type="text" value={findValue} placeholder="Search Here.." onChange={handleFindItem} />
                 </form>
             </div>
             {
