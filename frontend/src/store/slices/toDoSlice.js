@@ -19,10 +19,14 @@ const toDoSlice = createSlice({
          },
          deleteItem(state,action){             
              return action.payload;
-        }
+        },
+        getItem(state,action){    
+            console.log(action.payload)         
+            return action.payload;
+       }
     }
 })
 
 
-export const {addItem,removeAll,deleteItem} = toDoSlice.actions;
+export const {addItem,removeAll,deleteItem,getItem} = toDoSlice.actions;
 export default toDoSlice.reducer;

@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addItem, removeAll, deleteItem } from '../../store/slices/toDoSlice';
+import { addItem, removeAll, deleteItem, getItem } from '../../store/slices/toDoSlice';
 import "./toDoList.css"
 
-const ToDoList = (props) => {
-    const initialState = {
-        toDoList: [8]
-    }
+function ToDoList(props) {
+
+    //fetching Inital Data From Backend API
+    useEffect(()=>{
+        fetch('http://localhost:8080/api/list')
+        .then(res=>  res.text())
+        .then(data=>{
+            console.log(JSON.parse(data).dummyData)            
+            dispatch(getItem(JSON.parse(data).dummyData))
+        })
+        .catch(err=> console.log(err))
+    },[])
+   
 
     const dispatch = useDispatch();
     const list = useSelector((state) => state)
@@ -57,11 +66,7 @@ const ToDoList = (props) => {
         e.preventDefault();
         let findKey = e.target.value;
         setFindValue(findKey)
-    }
-    
-    // function handleCheckBox(key){
-    //     console.log(key)
-    // }
+    }    
 
     return (
 

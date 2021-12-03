@@ -2,12 +2,20 @@ const http = require('http');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const toDoListRouter = require('./routes/toDoList');
 
 const app = express();
 const server = http.createServer(app);
+const corsOption ={
+    origin: 'http://localhost:3000',
+    optionSuccessStatus: 200,
+    method: "GET, POST, DELETE"
+}
 
+
+app.use(cors(corsOption))
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
