@@ -28,9 +28,7 @@ const toDoSlice = createSlice({
          deleteItem(state,action){             
              return action.payload;
         },
-        getItem(state,action){  
-            debugger; 
-            console.log(state)                      ;
+        getItem(state,action){                                      
             return action.payload;
        }
     }
