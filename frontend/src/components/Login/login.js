@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 
 import NavBar from '../NavBar/navbar';
 import './login.css'
+import { login } from '../../store/slices/credentialSlice';
 
-function Login() {
+function Login(props) {
 
+    const dispatch = useDispatch();    
     const initialState = {
-        email: null,
-        password: null
+        email: '',
+        password: ''
     }
-    const [loginState, setLoginState] = useState(initialState)
+    const [loginState, setLoginState] = useState(initialState);
+
 
     /**
      * SET THE STATE WITH LOGIN CREDENTIALS      
      */
     function handleOnSubmit(e) {
         e.preventDefault();
-        console.log(loginState)
+        dispatch(login(loginState))
 
     }
 
@@ -29,7 +33,7 @@ function Login() {
         setLoginState({
             ...loginState, email: e.target.value
         })
-        console.log(e.target.value)
+        // console.log(e.target.value)
     }
 
     /**
@@ -40,7 +44,7 @@ function Login() {
         setLoginState({
             ...loginState, password: e.target.value
         })
-        
+
     }
 
     return (

@@ -1,8 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import toDoReducer from './slices/toDoSlice'
+import { combineReducers } from 'redux'
+import toDoReducer from './slices/toDoSlice';
+import credentialReducer from './slices/credentialSlice';
+
+const reducers = combineReducers({
+    todo: toDoReducer, user: credentialReducer
+})
 
 const store = configureStore({
-    reducer: {todo: toDoReducer},
+    reducer :reducers
+    // : {todo: toDoReducer, user: credentialReducer},
 })
 
 export default store;
