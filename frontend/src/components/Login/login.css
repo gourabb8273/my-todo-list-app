@@ -1,0 +1,54 @@
+.form-login__container{
+    /* display: flex; */
+    border-radius: 5px;
+    /* border: 2px red solid; */
+    position: fixed;
+    top: 20%;
+    left: 35%;
+    width: 35%;
+    height: 54%;
+    padding: 0 20px;
+    /* background: rgb(252, 249, 249); */
+    box-shadow: 2px 2px 2px 2px rgb(178, 177, 224);
+}
+
+.form-login__container > h3{
+  text-align: center;
+  padding-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.form-login__email{
+    padding: 5px 20px;    
+}
+
+.form-login__email--label{
+ font-size: large;
+ font-weight: 500;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-login__password{
+    padding: 5px 20px;
+}
+
+.form-login__password--label{
+    font-size: large;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-login__email--field{
+    
+    border: 3px solid red;
+}
+
+.form-login__button {
+    position: absolute;
+    width: 83%;
+    height: 45px;
+    bottom: 20px;
+    right: 40px;
+    
+}

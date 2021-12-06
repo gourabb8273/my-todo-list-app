@@ -11,9 +11,9 @@ function NavBar(props){
         <Navbar className="navbar-header" expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand className="navbar-header_item" href="#">What's The Plan for Today?</Navbar.Brand>
-          <Nav className="me-auto">
+          {/* <Nav className="me-auto">
             <Nav.Link  className="navbar-header_link" href="#login">Login</Nav.Link>            
-            </Nav>
+            </Nav> */}
         </Container>
       </Navbar>
         

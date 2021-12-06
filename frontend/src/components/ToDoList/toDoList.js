@@ -31,7 +31,7 @@ function ToDoList(props) {
     const list = useSelector((state) => state.todo)
 
     /**
-     * ACTION: Dispatch the updated state to store
+     * ACTION: DISPATCH THE UPDATED STATE TO STORE
      **/
     function handleOnSubmit(e) {
         e.preventDefault();
@@ -42,7 +42,7 @@ function ToDoList(props) {
     }
 
     /**
-     * ACTION: Change the state of current state
+     * ACTION: CHANGE THE STATE OF CURRENT STATE
      **/
     function handleInputChange(e) {
         e.preventDefault();
@@ -51,7 +51,7 @@ function ToDoList(props) {
     }
 
     /**
-     * ACTION: Clear all the tasks
+     * ACTION: CLEAR ALL THE TASKS 
      **/
     function handleClearAll(e) {
         e.preventDefault();
@@ -60,7 +60,7 @@ function ToDoList(props) {
     }
 
     /**
-    * ACTION: Delete the selected Item
+    * ACTION: DELETE THE SELECTED ITEM 
     **/
     function handleDeleteItem(key) {
         let newToDo = list.toDoList.filter((val, ind) => ind !== key)
