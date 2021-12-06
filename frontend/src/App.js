@@ -1,6 +1,6 @@
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import Navbar from './components/NavBar/navbar';
+import NavBar from './components/NavBar/navbar';
 import './App.css';
 import ToDoList from './components/ToDoList/toDoList';
 
@@ -10,10 +10,10 @@ function App() {
 
   return (
     <div className="main-body__container">
-      <Navbar/>        
-    <div className="todo-container__box">    
-    <ToDoList/>
-    </div>
+      <NavBar />
+      <div className="todo-container__box">
+        <ToDoList />
+      </div>
     </div>
   );
 }

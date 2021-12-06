@@ -11,24 +11,25 @@ import LoadingSpinner from '../Spinner/LoadingSpinner';
 
 function ToDoList(props) {
 
-    const dispatch = useDispatch();   
+    const dispatch = useDispatch();
     const [state, setState] = useState('');
     const [initialData, setInitialData] = useState(null)
     const [findValue, setFindValue] = useState('')
 
     //fetching Inital Data From Backend API
+
     useEffect(() => {
         fetch('http://localhost:8080/api/list')
             .then(res => res.text())
             .then(data => {
-                setInitialData(data);                
+                setInitialData(data);
                 dispatch(getItem(JSON.parse(data).dummyData))
             })
             .catch(err => console.log(err))
     }, [])
 
     const list = useSelector((state) => state.todo)
-   
+
     /**
      * ACTION: Dispatch the updated state to store
      **/
@@ -62,7 +63,7 @@ function ToDoList(props) {
     * ACTION: Delete the selected Item
     **/
     function handleDeleteItem(key) {
-        let newToDo = list.todo.toDoList.filter((val, ind) => ind !== key)
+        let newToDo = list.toDoList.filter((val, ind) => ind !== key)
         dispatch(deleteItem({ toDoList: newToDo }))
         // dispatch(deleteItem(key))
     }
@@ -78,31 +79,32 @@ function ToDoList(props) {
 
     return (
         <div>
-            <ToDoForm 
-            state={state} 
-            findValue={findValue} 
-            handleInputChange={handleInputChange} 
-            handleOnSubmit={handleOnSubmit} 
-            handleFindItem={handleFindItem} 
+            <ToDoForm
+                state={state}
+                findValue={findValue}
+                handleInputChange={handleInputChange}
+                handleOnSubmit={handleOnSubmit}
+                handleFindItem={handleFindItem}
             />
 
-            { initialData ? 
+            {initialData ?
                 list.toDoList.filter(el => el.data.toLowerCase().includes(findValue.toLowerCase()))
                     .map((item, i) => {
                         return (
-                            <ToDoListItem 
-                            i={i} 
-                            item={item} 
-                            handleDeleteItem={handleDeleteItem} 
+                            <ToDoListItem
+                                i={i}
+                                item={item}
+                                handleDeleteItem={handleDeleteItem}
                             />
                         )
-                    }) : <LoadingSpinner/>
+                    }) : <LoadingSpinner />
             }
 
-            <Button 
-            variant="danger" 
-            className="todolist-form__clear" 
-            onClick={handleClearAll}>Clear All</Button>
+            <Button
+                variant="danger"
+                disabled={!list.toDoList.length}
+                className="todolist-form__clear"
+                onClick={handleClearAll}>Clear All</Button>
         </div>
     )
 }
