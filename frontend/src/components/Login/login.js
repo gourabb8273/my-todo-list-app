@@ -35,8 +35,7 @@ function Login(props) {
         e.preventDefault();
         setLoginState({
             ...loginState, email: e.target.value
-        })
-        // console.log(e.target.value)
+        })        
     }
 
     /**

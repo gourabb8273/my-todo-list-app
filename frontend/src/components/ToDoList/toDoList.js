@@ -45,8 +45,7 @@ function ToDoList(props) {
      * ACTION: CHANGE THE STATE OF CURRENT STATE
      **/
     function handleInputChange(e) {
-        e.preventDefault();
-        console.log(e.target.value)
+        e.preventDefault();       
         setState(e.target.value)
     }
 

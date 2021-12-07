@@ -12,10 +12,24 @@ const credentialSlice = createSlice({
     reducers: {
         login(state, action) {
 
-            return {
+            const newState =  {
                 ...state, userId: action.payload.email,
                 password: action.payload.password, isLoggedIn: true
             }
+
+            fetch('http://localhost:8080/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newState)
+            }).then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch(err => console.log(err))
+
+            return newState;
         },
         logout(state, action) {
             return initialState;
