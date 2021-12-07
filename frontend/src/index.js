@@ -16,7 +16,8 @@ function IndexRoute(props) {
       <Provider store={store}>
       <Router>       
         <Routes>          
-          <Route exact path="/" element={<App/>}/>                    
+          <Route exact path="/" element={<App/>}/>          
+          {/* <Route path="/" render={() => (false ? <Redirect to="/login" /> : <App />)} />    */}
           <Route exact path="/login" element={<Login/>}/>             
           <Route path="/*" element={<PageNotFound/>}/>
         </Routes>      

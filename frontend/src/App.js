@@ -1,25 +1,31 @@
-import { useDispatch, useSelector } from 'react-redux';
-// import {useNavigate} from 'react-router-dom';
-import {Route, Redirect} from 'react-router-dom';
+import React from 'react';
+import { Navigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 import NavBar from './components/NavBar/navbar';
 import './App.css';
 import ToDoList from './components/ToDoList/toDoList';
 
+
 function App() {
 
-  // const history = useNavigate();
-  // console.log(history)
-  const isLoggedIn = useSelector(state=> state.user.isLoggedIn);  
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn)
+  console.log(isLoggedIn);
+  
+  if (!isLoggedIn) {
+    return (
+      <Navigate to="/login" />
+    )
+  }
 
-  return (    
+  return (
     <div className="main-body__container">
-      <NavBar />
-       <div className="todo-container__box">
+      <NavBar statusButton='Logout' />
+      <div className="todo-container__box">
         <ToDoList />
       </div>
-    </div> 
-  
+    </div>
+
   );
 }
 

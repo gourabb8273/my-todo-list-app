@@ -14,9 +14,7 @@ const toDoSlice = createSlice({
             //     body: "hey"
             // }).then(res=> res.text())
             //     .then(data=> console.log(data))
-            //     .catch(err=> console.log(err))
-            const {todolist} =state
-            console.log(state);
+            //     .catch(err=> console.log(err))            
            return {toDoList: 
             [...state.toDoList, 
                 {data: action.payload,

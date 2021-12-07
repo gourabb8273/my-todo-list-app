@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { addItem, removeAll, deleteItem, getItem } from '../../store/slices/toDoSlice';
@@ -69,7 +69,7 @@ function ToDoList(props) {
     }
 
     /**
-    // ACTION: Set state to filter item list data 
+    // ACTION: FILTER LIST ITEM DATA AND SET NEW STATE
     **/
     function handleFindItem(e) {
         e.preventDefault();
@@ -92,6 +92,7 @@ function ToDoList(props) {
                     .map((item, i) => {
                         return (
                             <ToDoListItem
+                                key={i}
                                 i={i}
                                 item={item}
                                 handleDeleteItem={handleDeleteItem}

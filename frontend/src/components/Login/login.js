@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 import NavBar from '../NavBar/navbar';
 import './login.css'
@@ -8,7 +9,8 @@ import { login } from '../../store/slices/credentialSlice';
 
 function Login(props) {
 
-    const dispatch = useDispatch();    
+    const dispatch = useDispatch();  
+    const history = useNavigate();  
     const initialState = {
         email: '',
         password: ''
@@ -21,7 +23,8 @@ function Login(props) {
      */
     function handleOnSubmit(e) {
         e.preventDefault();
-        dispatch(login(loginState))
+        dispatch(login(loginState));
+        history('/');
 
     }
 
