@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const cookieParser = require('cookie-parser')
 
 const toDoListRouter = require('./routes/toDoList');
 const credentialRoute = require('./routes/userCredential');
@@ -19,6 +20,7 @@ const corsOption ={
 app.use(cors(corsOption))
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+// app.use(cookieParser)
 
 app.use("/api/list",toDoListRouter);
 app.use("/api/login",credentialRoute);

@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    userId: null,
-    password: null,
-    isLoggedIn: false
+const initialState = {    
+    auth: false,
+    userToken: null 
 }
 
 const credentialSlice = createSlice({
@@ -12,23 +11,10 @@ const credentialSlice = createSlice({
     reducers: {
         login(state, action) {
 
-            const newState =  {
-                ...state, userId: action.payload.email,
-                password: action.payload.password, isLoggedIn: true
+             const newState =  {
+                     ...state, auth: action.payload.auth,
+                  userToken: action.payload.userToken
             }
-
-            fetch('http://localhost:8080/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newState)
-            }).then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                })
-                .catch(err => console.log(err))
-
             return newState;
         },
         logout(state, action) {

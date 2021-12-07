@@ -9,9 +9,8 @@ import ToDoList from './components/ToDoList/toDoList';
 
 function App() {
 
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn)
-  console.log(isLoggedIn);
-  
+  const isLoggedIn = useSelector(state => state.user.auth)
+
   if (!isLoggedIn) {
     return (
       <Navigate to="/login" />

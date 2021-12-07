@@ -9,21 +9,33 @@ import { login } from '../../store/slices/credentialSlice';
 
 function Login(props) {
 
+   
+
     const dispatch = useDispatch();  
     const history = useNavigate();  
+    
     const initialState = {
-        email: '',
+        userId: '',
         password: ''
     }
     const [loginState, setLoginState] = useState(initialState);
 
 
     /**
-     * SET THE STATE WITH LOGIN CREDENTIALS      
+     * SET THE STATE WITH LOGIN CREDENTIALS       
      */
-    function handleOnSubmit(e) {
+    async function handleOnSubmit(e) {
         e.preventDefault();
-        dispatch(login(loginState));
+        const response  = await fetch('http://localhost:8080/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(initialState)
+        })
+    
+        const data = await response.json();
+        dispatch(login(data));
         history('/');
 
     }
@@ -34,7 +46,7 @@ function Login(props) {
     function handleChangeEmail(e) {
         e.preventDefault();
         setLoginState({
-            ...loginState, email: e.target.value
+            ...loginState, userId: e.target.value
         })        
     }
 
