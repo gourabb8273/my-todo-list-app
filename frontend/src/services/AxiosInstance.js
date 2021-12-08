@@ -6,8 +6,7 @@ const axiosInstance = axios.create({
 })
 
 axiosInstance.interceptors.request.use((config)=>{
-    let cookies = Cookies.get('jwtAuth')
-    // console.log('cc')
+    let cookies = Cookies.get('jwtAuth')    
     console.log(cookies);
     return config;
 })

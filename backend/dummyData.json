@@ -1,17 +1,17 @@
 {
     "toDoList":[
         {
-            "data": "Study",
+            "taskTitle": "Study",
             "date":"03/12/2021"           
 
         },
         {
-            "data": "Gym",
+            "taskTitle": "Gym",
             "date":"03/12/2021"          
 
         },
         {
-            "data": "Coding",
+            "taskTitle": "Coding",
             "date":"03/12/2021"        
 
         }

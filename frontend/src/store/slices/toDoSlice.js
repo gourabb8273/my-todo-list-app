@@ -13,7 +13,7 @@ const toDoSlice = createSlice({
                 toDoList:
                     [...state.toDoList,
                     {
-                        data: action.payload,
+                        taskTitle: action.payload,
                         date: new Date().toLocaleDateString('en-GB')
                     }]
             }
@@ -25,8 +25,8 @@ const toDoSlice = createSlice({
             //     },
             //     body: JSON.stringify(newState)
             // }).then(response => response.json())
-            //     .then(data => {
-            //         console.log('Success:', data);
+            //     .then(taskTitle => {
+            //         console.log('Success:', taskTitle);
             //     })
             //     .catch(err => console.log(err))
 

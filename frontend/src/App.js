@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="main-body__container">
-      <NavBar statusButton='Logout' />
+      <NavBar statusButton='Logout' isValidPage={true}/>
       <div className="todo-container__box">
         <ToDoList />
       </div>
