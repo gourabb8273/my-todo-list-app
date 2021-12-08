@@ -15,12 +15,11 @@ const corsOption ={
     optionSuccessStatus: 200,
     method: "GET, POST, DELETE"
 }
-
-
+app.use(cookieParser());
 app.use(cors(corsOption))
 app.use(bodyParser.json());
 app.use(morgan('dev'));
-// app.use(cookieParser)
+
 
 app.use("/api/list",toDoListRouter);
 app.use("/api/login",credentialRoute);

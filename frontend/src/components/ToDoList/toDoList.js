@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 import { addItem, removeAll, deleteItem, getItem } from '../../store/slices/toDoSlice';
 import "./toDoList.css";
@@ -16,14 +17,14 @@ function ToDoList(props) {
     const [initialData, setInitialData] = useState(null)
     const [findValue, setFindValue] = useState('')
 
-    //fetching Inital Data From Backend API
-
+    /**
+     * fetching Inital Data From Backend API
+     */
     useEffect(() => {
-        fetch('http://localhost:8080/api/list')
-            .then(res => res.text())
-            .then(data => {
-                setInitialData(data);
-                dispatch(getItem(JSON.parse(data).dummyData))
+        axios.get('http://localhost:8080/api/list')            
+            .then(response => {
+                setInitialData(response.data);                
+                dispatch(getItem(response.data.dummyData))
             })
             .catch(err => console.log(err))
     }, [])

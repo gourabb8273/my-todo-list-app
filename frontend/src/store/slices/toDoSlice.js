@@ -18,17 +18,17 @@ const toDoSlice = createSlice({
                     }]
             }
 
-            fetch('http://localhost:8080/api/list', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newState)
-            }).then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                })
-                .catch(err => console.log(err))
+            // fetch('http://localhost:8080/api/list', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(newState)
+            // }).then(response => response.json())
+            //     .then(data => {
+            //         console.log('Success:', data);
+            //     })
+            //     .catch(err => console.log(err))
 
             return newState;
         },
