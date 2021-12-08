@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 import NavBar from '../NavBar/navbar';
 import './login.css'
@@ -13,6 +13,7 @@ function Login(props) {
 
     const dispatch = useDispatch();
     const history = useNavigate();
+    const [cookies, setCookie] = useCookies(['jwtAuth']);
 
     const initialState = {
         userId: '',
@@ -27,13 +28,13 @@ function Login(props) {
         e.preventDefault();
         try {
             const response = await axiosInstance.post('http://localhost:8080/api/login', loginState)
-            const data = await response.data;
-            console.log(data)
+            const data = await response.data; 
+            setCookie('jwtAuth',data.userToken, { path: '/' });           
             dispatch(login(data));
             history('/');
         }
         catch (error) {
-            console.error(error.response.data);
+            console.error(error);
         }
 
     }
