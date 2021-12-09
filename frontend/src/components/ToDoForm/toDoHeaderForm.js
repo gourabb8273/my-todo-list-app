@@ -1,11 +1,11 @@
 import React from "react";
 
-import "./toDoForm.css";
+import "./toDoHeaderForm.css";
 
 /**
  * TO DO HEADER COMPONENT 
  */
-function ToDoForm({
+function ToDoHeaderForm({
   searchTasks,
   handleSearchItem,
   handleOnSubmit,
@@ -36,4 +36,4 @@ function ToDoForm({
   );
 }
 
-export default ToDoForm;
+export default ToDoHeaderForm;

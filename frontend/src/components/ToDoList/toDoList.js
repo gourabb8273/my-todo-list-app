@@ -12,14 +12,14 @@ import {
 } from "../../store/slices/toDoSlice";
 import "./toDoList.css";
 import ToDoListItem from "../ToDoListItem/toDoListItem";
-import ToDoForm from "../ToDoForm/toDoForm";
+import ToDoHeaderForm from "../ToDoForm/toDoHeaderForm";
 import LoadingSpinner from "../Spinner/LoadingSpinner";
 
 /**
  * TO DO LIST BODY COMPONENT 
  */
-function ToDoList(props) {
-  const apiURL = "http://localhost:8080/api/list";
+function ToDoList() {
+  const listApiUrl = "http://localhost:8080/api/list";
   const dispatch = useDispatch();
   const [taskDescription, setTaskDescription] = useState("");
   const [initialTasks, setInitialTasks] = useState(null);
@@ -31,7 +31,7 @@ function ToDoList(props) {
    */
   useEffect(() => {
     axios
-      .get(apiURL)
+      .get(listApiUrl)
       .then((response) => {
         setInitialTasks(response.data);
         dispatch(getItem(response.data.dummyData));
@@ -85,7 +85,7 @@ function ToDoList(props) {
 
   return (
     <div>
-      <ToDoForm
+      <ToDoHeaderForm
         taskDescription={taskDescription}
         searchTasks={searchTasks}
         handleInputChange={handleInputChange}

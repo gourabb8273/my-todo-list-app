@@ -1,9 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faExclamationTriangle,
-  faFrown,
-} from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faExclamationTriangle,
+//   faFrown,
+// } from "@fortawesome/free-solid-svg-icons";
 
 import "./pageNotFound.css";
 import NavBar from "../NavBar/navbar";

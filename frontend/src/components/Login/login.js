@@ -12,7 +12,8 @@ import axiosInstance from "../../services/AxiosInstance";
 /**
  * LOGIN USER CREDENTIAL COMPONENT
  */
-function Login(props) {
+function Login() {
+  const loginApiUrl = "http://localhost:8080/api/login";
   const dispatch = useDispatch();
   const history = useNavigate();
   const [cookies, setCookie] = useCookies(["jwtAuth"]);
@@ -30,7 +31,7 @@ function Login(props) {
     e.preventDefault();
     try {
       const response = await axiosInstance.post(
-        "http://localhost:8080/api/login",
+        loginApiUrl,
         loginState
       );
       const data = await response.data;
