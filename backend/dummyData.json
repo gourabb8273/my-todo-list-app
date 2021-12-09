@@ -1,18 +1,23 @@
 {
     "toDoList":[
         {
-            "taskTitle": "Study",
-            "createdDate":"03/12/2021"           
+            "taskTitle": "Read about CSS Flexbox",
+            "createdDate":"Jan 4, 2021"           
 
         },
         {
-            "taskTitle": "Gym",
-            "createdDate":"03/12/2021"          
+            "taskTitle": "Create a Todo Application",
+            "createdDate":"Feb 4, 2021"          
 
         },
         {
-            "taskTitle": "Coding",
-            "createdDate":"03/12/2021"        
+            "taskTitle": "Give Level Up Test",
+            "createdDate":"Jan 4, 2021"        
+
+        },
+        {
+            "taskTitle": "Review the application",
+            "createdDate":"Dec 5, 2021"        
 
         }
     ]

@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import getCurrentDateTime from '../../services/getCurrentDateTime';
+
 const initialState = {
   toDoList: [],
 };
@@ -14,7 +16,7 @@ const toDoSlice = createSlice({
           ...state.toDoList,
           {
             taskTitle: action.payload,
-            date: new Date().toLocaleDateString("en-GB"),
+            createdDate: getCurrentDateTime(),
           },
         ],
       };

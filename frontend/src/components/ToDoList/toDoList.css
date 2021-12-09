@@ -1,15 +1,4 @@
 
-
-.todolist-form__clear{
-    position: relative;
-    /* left: 225px; */
-    left: 41%;
-    height: 2.7rem;
-    width: 6rem;
-    margin-right: 20px;    
-    margin-bottom: 7px;  
-}
-
 .list-group__task{
     display: inline-flexbox;
     width: 430px;;
@@ -21,5 +10,10 @@
   position:absolute;
   color:white;
   right: 420px;
+}
+
+.todolist-container{
+  /* background: rgba(241, 235, 235, 0.315); */
+  /* margin: 0 %; */
 }
 
