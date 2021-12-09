@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FaSearch } from "react-icons/fa";
 
 import "./toDoHeaderForm.css";
 
@@ -18,6 +17,19 @@ function ToDoHeaderForm({
   isListEmpty,
   isTextEntered,
 }) {
+  const searchIconStyle = {
+    color: "gray",
+    fontSize: "2.7rem",
+    top: "38%",
+    width: "41px",
+    height: "47px",
+    margin: "3px 0 0px 0",
+    left: "37%",
+    padding: "4px",
+    background: "#F0F0F0",
+    color: "gray",
+    position: "absolute",
+  };
   return (
     <div className="todolist-header__container">
       <h2>To Do List</h2>
@@ -29,7 +41,7 @@ function ToDoHeaderForm({
           placeholder="Add tasks here.."
           value={taskDescription}
           onChange={handleInputChange}
-        />
+        ></input>
         <Button
           onClick={handleOnSubmit}
           disabled={!isTextEntered}
@@ -37,11 +49,6 @@ function ToDoHeaderForm({
         >
           Add
         </Button>
-        {/* <FontAwesomeIcon
-        className="list-group__icon add-item" pull="left" size="4x" 
-        icon={faPlus}
-        // onClick={() => handleDeleteItem(taskIndex)}
-      ></FontAwesomeIcon> */}
         <Button
           variant="danger"
           disabled={!isListEmpty}
@@ -51,23 +58,16 @@ function ToDoHeaderForm({
           Clear All
         </Button>
       </form>
-      <div >
-      <input
-        className="todolist-form__search"
-        type="text"
-        value={searchTasks}
-        placeholder="Search Here.."
-        onChange={handleSearchItem}
-      >        
-      </input>      
+      <div>
+        <input
+          className="todolist-form__search"
+          type="text"
+          value={searchTasks}
+          placeholder="Search Here.."
+          onChange={handleSearchItem}
+        ></input>
+        <FaSearch style={searchIconStyle} />
       </div>
-      {/* <i class="fa fa-search" aria-hidden="true"></i> */}
-
-       {/* <FontAwesomeIcon
-        className="list-group__icon search-item" pull="left" size="3x" 
-        icon={faSearch}
-        // onClick={() => handleDeleteItem(taskIndex)}
-      ></FontAwesomeIcon> */}
     </div>
   );
 }

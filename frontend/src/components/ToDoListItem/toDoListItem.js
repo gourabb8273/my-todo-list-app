@@ -15,7 +15,7 @@ function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
       </div>
       <div className="todolist-item__date">
         <h5>
-          <Badge bg="secondary">{taskItem.createdDate}</Badge>
+          <Badge bg="success">{taskItem.createdDate}</Badge>
         </h5>
       </div>
       <div className="todolist-item__delete">
@@ -23,7 +23,7 @@ function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
           className="list-group__icon"
           icon={faTrashAlt}
           onClick={() => handleDeleteItem(taskIndex)}
-        ></FontAwesomeIcon>
+        ></FontAwesomeIcon>        
       </div>
     </div>
   );

@@ -1,14 +1,11 @@
 .form-login__container{
-    /* display: flex; */
-    border-radius: 5px;
-    /* border: 2px red solid; */
+    border-radius: 5px;    
     position: fixed;
     top: 20%;
     left: 35%;
     width: 35%;
     height: 54%;
     padding: 0 20px;
-    /* background: rgb(252, 249, 249); */
     box-shadow: 2px 2px 2px 2px rgb(178, 177, 224);
 }
 
@@ -39,16 +36,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.form-login__email--field{
-    
-    border: 3px solid red;
-}
-
 .form-login__button {
     position: absolute;
     width: 83%;
     height: 45px;
     bottom: 20px;
-    right: 40px;
+    left: 9%;
     
 }

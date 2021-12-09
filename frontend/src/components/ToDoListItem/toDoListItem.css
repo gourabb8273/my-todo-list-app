@@ -15,7 +15,7 @@
 }
 
 .todolist-task__items:hover {
-  background: rgba(29, 158, 104, 0.623);
+  background: rgba(177, 199, 190, 0.623);
 }
 
 .todolist-task__items button {
