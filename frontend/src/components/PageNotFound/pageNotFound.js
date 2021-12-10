@@ -6,7 +6,7 @@ import "./pageNotFound.css";
 import NavBar from "../NavBar/navbar";
 
 /**
- * PAGE NOT FOUND COMPONENT
+ * PAGE NOT FOUND 404 COMPONENT
  */
 function PageNotFound() {
   const history = useNavigate();

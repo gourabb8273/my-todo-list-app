@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
 /**
- * OPEN A MODAL
+ *  REUSEABLE MODAL COMPONENT
  */
 function ModalDialog({
   shouldDisable,
-  variant,
+  modalVariant,
   modalName,
   modalBodyTitle,
   modalBodyDescription,
@@ -16,20 +16,20 @@ function ModalDialog({
   modalBodyStyle,
   modalButtonStyle,
 }) {
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   /**
    * CLOSE THE MODAL
    */
-  function handleClose() {
-    setShow(false);
+  function handleCloseModal() {
+    setShowModal(false);
   }
 
   /**
    * OEPN THE MODAL
    */
-  function handleShow() {
-    setShow(true);
+  function handleShowModal() {
+    setShowModal(true);
   }
 
   /**
@@ -38,23 +38,23 @@ function ModalDialog({
   function handleClearAndDestroy(e) {
     e.preventDefault();
     handleModalAction(e);
-    handleClose();
+    handleCloseModal();
   }
 
   return (
     <div className={modalBodyStyle}>
       <Button
         className={modalButtonStyle}
-        disabled={!shouldDisable} //dya
-        variant={variant}
-        onClick={handleShow}
+        disabled={!shouldDisable}
+        variant={modalVariant}
+        onClick={handleShowModal}
       >
         {modalName}
       </Button>
 
       <Modal
-        show={show}
-        onHide={handleClose}
+        show={showModal}
+        onHide={handleCloseModal}
         backdrop="static"
         keyboard={false}
       >
@@ -63,7 +63,7 @@ function ModalDialog({
         </Modal.Header>
         <Modal.Body>{modalBodyDescription}</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleCloseModal}>
             {modalCloseName}
           </Button>
           <Button variant="danger" onClick={handleClearAndDestroy}>

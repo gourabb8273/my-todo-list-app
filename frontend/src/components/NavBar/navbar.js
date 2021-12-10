@@ -7,6 +7,9 @@ import Cookies from "js-cookie";
 import "./navbar.css";
 import { logout } from "../../store/slices/credentialSlice";
 
+/**
+ * REUSEABLE NAVBAR COMPONENT
+ */
 function NavBar({ statusButton, isValidPage }) {
   const history = useNavigate();
   const dispatch = useDispatch();

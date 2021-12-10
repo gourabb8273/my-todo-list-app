@@ -9,15 +9,14 @@ import {
   deleteItem,
   getItem,
 } from "../../store/slices/toDoSlice";
-import "./toDoList.css";
 import ToDoListItem from "../ToDoListItem/toDoListItem";
-import ToDoHeaderForm from "../ToDoForm/toDoHeaderForm";
+import ToDoHeaderForm from "../ToDoHeaderForm/toDoHeaderForm";
 import LoadingSpinner from "../Spinner/LoadingSpinner";
 import filterToDoListItem from "../../services/filterToDoListItem";
 import NoTaskAdded from "../NoTaskAdded/noTaskAdded";
 
 /**
- * LIST TO DO BODY COMPONENT
+ * TO DO LIST BODY COMPONENT 
  */
 function ToDoList() {
   const listApiURL = "http://localhost:8080/api/list";

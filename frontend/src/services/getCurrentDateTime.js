@@ -1,5 +1,5 @@
 /**
- * RETURN CURRENT DATE TIME & YEAR IN READABLE FORMAT
+ * RETURN CURRENT DATE TIME & YEAR IN READABLE FORMAT (EXAMPLE: Dec 5, 2021)
  */
 
 function getCurrentDateTime() {
@@ -20,7 +20,7 @@ function getCurrentDateTime() {
 
   const d = new Date();
   const year = d.getFullYear();
-  const day = d.getDay();
+  const day = d.getDate();
   const month = months[d.getMonth()].slice(0, 3);
   const currentDateTime = month + " " + day + ", " + year;
   return currentDateTime;

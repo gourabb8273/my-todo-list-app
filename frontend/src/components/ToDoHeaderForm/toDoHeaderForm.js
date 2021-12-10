@@ -17,8 +17,8 @@ function ToDoHeaderForm({
   isListEmpty,
   isTextEntered,
 }) {
-  // ASSIGNING PROPS DATA FOR CLEAR ALL ITEM MODAL
-  const variant = "danger";
+  // ASSIGNING PROPS DATA FOR CLEAR ALL LIST MODAL
+  const modalVariant = "danger";
   const modalName = "Clear All";
   const modalBodyTitle = "Do you really want to clear all?";
   const modalBodyDescription = "This will remove all your tasks";
@@ -57,7 +57,7 @@ function ToDoHeaderForm({
         </Button>
         <ModalDialog
           shouldDisable={isListEmpty}
-          variant={variant}
+          modalVariant={modalVariant}
           modalName={modalName}
           modalBodyTitle={modalBodyTitle}
           modalBodyDescription={modalBodyDescription}

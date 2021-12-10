@@ -10,18 +10,17 @@ import { login } from "../../store/slices/credentialSlice";
 import axiosInstance from "../../services/AxiosInstance";
 
 /**
- * LOGIN USER CREDENTIAL COMPONENT
+ * USER LOGIN COMPONENT
  */
 function LoginForm() {
-  const loginApiURL = "http://localhost:8080/api/login";
-  const dispatch = useDispatch();
-  const history = useNavigate();
-  const [cookies, setCookie] = useCookies(["jwtAuth"]);
-
   const initialState = {
     userId: "",
     password: "",
   };
+  const loginApiURL = "http://localhost:8080/api/login";
+  const dispatch = useDispatch();
+  const history = useNavigate();
+  const [cookies, setCookie] = useCookies(["jwtAuth"]);
   const [loginState, setLoginState] = useState(initialState);
 
   /**
@@ -31,9 +30,9 @@ function LoginForm() {
     e.preventDefault();
     try {
       const response = await axiosInstance.post(loginApiURL, loginState);
-      const data = await response.data;
-      setCookie("jwtAuth", data.userToken, { path: "/" });
-      dispatch(login(data));
+      const userCredentialInfo = await response.data;
+      setCookie("jwtAuth", userCredentialInfo.userToken, { path: "/" });
+      dispatch(login(userCredentialInfo));
       history("/");
     } catch (error) {
       console.error(error);
@@ -77,7 +76,7 @@ function LoginForm() {
             </Form.Label>
             <Form.Control
               onChange={handleChangeEmail}
-              value={loginState.email}
+              value={loginState.userId}
               classNamë="form-login__email--field"
               type="email"
               placeholder="Enter email"

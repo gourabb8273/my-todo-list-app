@@ -10,6 +10,9 @@ import store from "./store/store";
 import PageNotFound from "./components/PageNotFound/pageNotFound";
 import LoginForm from "./components/LoginForm/loginForm";
 
+/**
+ * FINAL INDEX COMPONENT
+ */
 function IndexRoute() {
   return (
     <React.StrictMode>
