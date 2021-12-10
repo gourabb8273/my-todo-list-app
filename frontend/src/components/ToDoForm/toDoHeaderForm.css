@@ -9,7 +9,7 @@
 
 .todolist-form {
   width: 96%;
-  height: 65px;
+  height: 70px;
   background: rgba(207, 207, 240, 0.575);
   border-radius: 3px;
   padding-left: 0px;
@@ -44,11 +44,11 @@
 .todolist-form__submit {
   width: 14%;
   margin: 6px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .todolist-form__search {
-  margin: 0% 30% 1% 20%;
+  margin: 0% 32% 1% 20%;
   width: 55%;
   height: 2.8rem;
   outline: none;
@@ -67,4 +67,15 @@
   top: 38.6%;
   right: 54.7%;
   color: rgb(185, 177, 160);
+}
+
+.todolist-clear {
+  margin: 6px;
+  width: 14%;
+  margin-right: 11px;
+}
+
+.todolist-clear__button {
+  height: 100%;
+  width: 100%;
 }
