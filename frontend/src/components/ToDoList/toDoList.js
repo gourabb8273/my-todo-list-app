@@ -13,6 +13,8 @@ import "./toDoList.css";
 import ToDoListItem from "../ToDoListItem/toDoListItem";
 import ToDoHeaderForm from "../ToDoForm/toDoHeaderForm";
 import LoadingSpinner from "../Spinner/LoadingSpinner";
+import filterToDoListItem from "../../services/filterToDoListItem";
+import NoTaskAdded from "../NoTaskAdded/noTaskAdded";
 
 /**
  * TO DO LIST BODY COMPONENT
@@ -22,8 +24,8 @@ function ToDoList() {
   const dispatch = useDispatch();
   const [taskDescription, setTaskDescription] = useState("");
   const [initialTasks, setInitialTasks] = useState(null);
-  const [searchTasks, setSearchTasks] = useState("");
-  const toDoistItem = useSelector((state) => state.todo.toDoList);
+  const [searchText, setSearchTasks] = useState("");
+  const toDoListItem = useSelector((state) => state.todo.toDoList);
 
   /**
    *  FETCHING INITIAL DATA
@@ -66,7 +68,7 @@ function ToDoList() {
    * ACTION: DELETE THE SELECTED ITEM
    **/
   function handleDeleteItem(deleteTask) {
-    const toDoList = toDoistItem.filter(
+    const toDoList = toDoListItem.filter(
       (listItem, listIndex) => listIndex !== deleteTask
     );
     dispatch(deleteItem({ toDoList }));
@@ -85,32 +87,32 @@ function ToDoList() {
     <div>
       <ToDoHeaderForm
         taskDescription={taskDescription}
-        searchTasks={searchTasks}
+        searchText={searchText}
         handleInputChange={handleInputChange}
         handleOnSubmit={handleOnSubmit}
         handleSearchItem={handleSearchItem}
         handleClearAll={handleClearAll}
-        isListEmpty={!!toDoistItem.length}
+        isListEmpty={!!toDoListItem.length}
         isTextEntered={!!taskDescription.length}
       />
       <div className="todolist-container">
         {initialTasks ? (
-          toDoistItem
-            .filter((taskItem) =>
-              taskItem.taskTitle
-                .toLowerCase()
-                .includes(searchTasks.toLowerCase())
+          !!toDoListItem.length ? (
+            filterToDoListItem(toDoListItem, searchText).map(
+              (taskItem, taskIndex) => {
+                return (
+                  <ToDoListItem
+                    key={taskIndex}
+                    taskIndex={taskIndex}
+                    taskItem={taskItem}
+                    handleDeleteItem={handleDeleteItem}
+                  />
+                );
+              }
             )
-            .map((taskItem, taskIndex) => {
-              return (
-                <ToDoListItem
-                  key={taskIndex}
-                  taskIndex={taskIndex}
-                  taskItem={taskItem}
-                  handleDeleteItem={handleDeleteItem}
-                />
-              );
-            })
+          ) : (
+            <NoTaskAdded />
+          )
         ) : (
           <LoadingSpinner />
         )}

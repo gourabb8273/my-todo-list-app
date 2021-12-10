@@ -6,8 +6,8 @@
 
 .todolist-task__items {
   display: flex;
-  border-radius: 3px;  
-  background: rgba(100, 204, 204, 0.11);
+  border-radius: 3px;    
+  background: rgba(229, 229, 250, 0.342);   
   border: 1px solid rgba(0, 0, 0, 0.123);
   height: 55px;
   margin-left: 2%;
