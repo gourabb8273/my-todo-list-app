@@ -7,7 +7,7 @@ import "./toDoListItem.css";
 
 function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
   return (
-    <div className="todolist-task__items" key={taskIndex}>      
+    <div className="todolist-task__items" key={taskIndex}>
       <div className="todolist-item__title">
         <h3>
           {taskIndex + 1 + ".  "} {taskItem.taskTitle}
@@ -23,7 +23,7 @@ function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
           className="list-group__icon"
           icon={faTrashAlt}
           onClick={() => handleDeleteItem(taskIndex)}
-        ></FontAwesomeIcon>        
+        ></FontAwesomeIcon>
       </div>
     </div>
   );

@@ -21,9 +21,9 @@ function getCurrentDateTime() {
   const d = new Date();
   const year = d.getFullYear();
   const day = d.getDay();
-  const month = months[d.getMonth()].slice(0,3);
+  const month = months[d.getMonth()].slice(0, 3);
   const currentDateTime = month + " " + day + ", " + year;
-  return currentDateTime;    
+  return currentDateTime;
 }
 
 export default getCurrentDateTime;

@@ -1,27 +1,26 @@
-.navbar-list__item{
-    background: rgb(56, 56, 129);
-    height: 60px;;
-    
+.navbar-list__item {
+  background: rgb(56, 56, 129);
+  height: 60px;
 }
 
-.navbar-header{
-    height: 65px;   
-    display: flex;     
+.navbar-header {
+  height: 65px;
+  display: flex;
 }
 
-.navbar-header_item{   
-    display: flex; 
-    position: relative;
-    width: 800px;
-    left: 38%;
-    font-size: small;
+.navbar-header_item {
+  display: flex;
+  position: relative;
+  width: 800px;
+  left: 38%;
+  font-size: small;
 }
 
-.navbar-header_link{  
-    position: relative;      
-    left: 300px;             
-    font-size: 20px;
-    color: white;
-    font-weight: 400;
-    margin-bottom: 5px;;    
+.navbar-header_link {
+  position: relative;
+  left: 300px;
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 5px;
 }

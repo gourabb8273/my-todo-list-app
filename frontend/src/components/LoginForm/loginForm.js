@@ -5,14 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 import NavBar from "../NavBar/navbar";
-import "./login.css";
+import "./loginForm.css";
 import { login } from "../../store/slices/credentialSlice";
 import axiosInstance from "../../services/AxiosInstance";
 
 /**
  * LOGIN USER CREDENTIAL COMPONENT
  */
-function Login() {
+function LoginForm() {
   const loginApiURL = "http://localhost:8080/api/login";
   const dispatch = useDispatch();
   const history = useNavigate();
@@ -30,10 +30,7 @@ function Login() {
   async function handleOnSubmit(e) {
     e.preventDefault();
     try {
-      const response = await axiosInstance.post(
-        loginApiURL,
-        loginState
-      );
+      const response = await axiosInstance.post(loginApiURL, loginState);
       const data = await response.data;
       setCookie("jwtAuth", data.userToken, { path: "/" });
       dispatch(login(data));
@@ -115,4 +112,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginForm;

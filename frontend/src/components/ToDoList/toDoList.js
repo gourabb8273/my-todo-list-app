@@ -21,10 +21,10 @@ import NoTaskAdded from "../NoTaskAdded/noTaskAdded";
  */
 function ToDoList() {
   const listApiURL = "http://localhost:8080/api/list";
-  const dispatch = useDispatch();
   const [taskDescription, setTaskDescription] = useState("");
   const [initialTasks, setInitialTasks] = useState(null);
   const [searchText, setSearchTasks] = useState("");
+  const dispatch = useDispatch();
   const toDoListItem = useSelector((state) => state.todo.toDoList);
 
   /**

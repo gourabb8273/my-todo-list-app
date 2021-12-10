@@ -8,8 +8,6 @@ import ToDoList from "./components/ToDoList/toDoList";
 
 function App() {
   let isLoggedIn = Cookies.get("jwtAuth");
-  // const isLoggedIn = useSelector(state => state.user.auth)
-
   if (!isLoggedIn) {
     return <Navigate to="/login" />;
   }

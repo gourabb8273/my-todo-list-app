@@ -8,7 +8,7 @@ import "./index.css";
 import App from "./App";
 import store from "./store/store";
 import PageNotFound from "./components/PageNotFound/pageNotFound";
-import Login from "./components/Login/login";
+import LoginForm from "./components/LoginForm/loginForm";
 
 function IndexRoute() {
   return (
@@ -17,7 +17,7 @@ function IndexRoute() {
         <Router>
           <Routes>
             <Route exact path="/" element={<App />} />
-            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/login" element={<LoginForm />} />
             <Route path="/*" element={<PageNotFound />} />
           </Routes>
         </Router>

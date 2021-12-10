@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { FaSearch } from "react-icons/fa";
 
 import "./toDoHeaderForm.css";
 
@@ -33,7 +32,16 @@ function ToDoHeaderForm({
   return (
     <div className="todolist-header__container">
       <h2>To Do List</h2>
-
+      <div>
+        <input
+          disabled={!isListEmpty}
+          className="todolist-form__search"
+          type="text"
+          value={searchTasks}
+          placeholder="Search Here.."
+          onChange={handleSearchItem}
+        ></input>
+      </div>
       <form className="todolist-form">
         <input
           className="todolist-form__input"
@@ -58,16 +66,6 @@ function ToDoHeaderForm({
           Clear All
         </Button>
       </form>
-      <div>
-        <input
-          className="todolist-form__search"
-          type="text"
-          value={searchTasks}
-          placeholder="Search Here.."
-          onChange={handleSearchItem}
-        ></input>
-        <FaSearch style={searchIconStyle} />
-      </div>
     </div>
   );
 }

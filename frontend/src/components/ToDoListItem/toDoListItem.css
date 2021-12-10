@@ -6,8 +6,8 @@
 
 .todolist-task__items {
   display: flex;
-  border-radius: 3px;    
-  background: rgba(229, 229, 250, 0.342);   
+  border-radius: 3px;
+  background: rgba(229, 229, 250, 0.342);
   border: 1px solid rgba(0, 0, 0, 0.123);
   height: 55px;
   margin-left: 2%;
@@ -15,7 +15,7 @@
 }
 
 .todolist-task__items:hover {
-  background: rgba(177, 199, 190, 0.623);
+  background: rgba(229, 229, 250, 0.808);
 }
 
 .todolist-task__items button {
@@ -29,17 +29,20 @@
   color: white;
   font-size: medium;
 }
+
 .todolist-item__title {
   font-size: 1.3rem;
-  width: 70%;  
+  width: 70%;
 }
+
 .todolist-item__title > h3 {
   font-family: inherit;
   text-align: start;
   font-size: 1.2rem;
   margin: 2% 2% 1% 6%;
 }
-.todolist-item__date {  
+
+.todolist-item__date {
   width: 20%;
 }
 
@@ -47,7 +50,7 @@
   margin: 5%;
   margin-top: 7%;
   text-align: end;
-  color: gray;  
+  color: gray;
   align-items: flex-end;
   font-size: 1.1rem;
   margin-left: auto;

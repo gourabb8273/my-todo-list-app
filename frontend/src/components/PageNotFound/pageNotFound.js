@@ -22,7 +22,7 @@ function PageNotFound() {
   return (
     <div>
       <NavBar isValidPage={false} />
-      <div className="page-not__found">        
+      <div className="page-not__found">
         <h2>404</h2>
         <div className="page-not_found--body">
           <h3>Oops!, This Page Could Not Be Found!</h3>
