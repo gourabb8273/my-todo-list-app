@@ -2,9 +2,10 @@ import React from "react";
 import { Button } from "react-bootstrap";
 
 import "./toDoHeaderForm.css";
+import ClearAllModal from "../ClearAllModal/clearAllModal";
 
 /**
- * TO DO HEADER COMPONENT
+ * TO DO LIST HEADER FORM COMPONENT
  */
 function ToDoHeaderForm({
   searchTasks,
@@ -16,19 +17,6 @@ function ToDoHeaderForm({
   isListEmpty,
   isTextEntered,
 }) {
-  const searchIconStyle = {
-    color: "gray",
-    fontSize: "2.7rem",
-    top: "38%",
-    width: "41px",
-    height: "47px",
-    margin: "3px 0 0px 0",
-    left: "37%",
-    padding: "4px",
-    background: "#F0F0F0",
-    color: "gray",
-    position: "absolute",
-  };
   return (
     <div className="todolist-header__container">
       <h2>To Do List</h2>
@@ -57,14 +45,10 @@ function ToDoHeaderForm({
         >
           Add
         </Button>
-        <Button
-          variant="danger"
-          disabled={!isListEmpty}
-          className="todolist-form__clear"
-          onClick={handleClearAll}
-        >
-          Clear All
-        </Button>
+        <ClearAllModal
+          isListEmpty={isListEmpty}
+          handleClearAll={handleClearAll}
+        />
       </form>
     </div>
   );

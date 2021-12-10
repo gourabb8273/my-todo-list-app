@@ -5,6 +5,9 @@ import { Badge } from "react-bootstrap";
 
 import "./toDoListItem.css";
 
+/**
+ * LIST TO DO ITEM COMPONENT
+ */
 function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
   return (
     <div className="todolist-task__items" key={taskIndex}>
