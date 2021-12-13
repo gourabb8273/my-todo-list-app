@@ -3,7 +3,7 @@ import React from "react";
 import "./noTaskAdded.css";
 
 /**
- * RENDER WHEN NO TASK HAS BEEN ADDED IN TODOLIST
+ * RENDER WHEN NO TASK HAS BEEN ADDED IN THE TODOLIST
  */
 function NoTaskAdded() {
   return (

@@ -56,7 +56,7 @@ function ToDoHeaderForm({
           Add
         </Button>
         <ModalDialog
-          shouldDisable={isListEmpty}
+          shouldModalEnable={isListEmpty}
           modalVariant={modalVariant}
           modalName={modalName}
           modalBodyTitle={modalBodyTitle}

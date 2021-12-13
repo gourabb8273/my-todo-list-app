@@ -4,7 +4,7 @@
   background: rgb(247, 247, 247);
 }
 
-.todolist-task__items {
+.todolist-items {
   display: flex;
   border-radius: 3px;
   background: rgba(229, 229, 250, 0.342);
@@ -14,11 +14,11 @@
   margin-right: 2%;
 }
 
-.todolist-task__items:hover {
+.todolist-items:hover {
   background: rgba(229, 229, 250, 0.808);
 }
 
-.todolist-task__items button {
+.todolist-items button {
   margin-left: 100px;
   margin-top: 5px;
   height: 45px;
@@ -35,11 +35,36 @@
   width: 70%;
 }
 
+@media (max-width: 40rem) {
+  .todolist-item__title {
+    width: 65%;
+    margin-top: 2%;
+  }
+}
+
 .todolist-item__title > h3 {
   font-family: inherit;
   text-align: start;
   font-size: 1.2rem;
   margin: 2% 2% 1% 6%;
+}
+
+@media (max-width: 52rem) {
+  .todolist-item__title > h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .todolist-item__title > h3 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 25rem) {
+  .todolist-item__title > h3 {
+    font-size: 0.6rem;
+  }
 }
 
 .todolist-item__date {
@@ -57,8 +82,40 @@
   border-radius: 30px;
 }
 
+@media (max-width: 52rem) {
+  .todolist-item__date > h5 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .todolist-item__date > h5 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 25rem) {
+  .todolist-item__date > h5 {
+    font-size: 0.6rem;
+  }
+}
+
 .todolist-item__delete {
   width: 10%;
+}
+
+@media (max-width: 44rem) {
+  .todolist-item__delete {
+    font-size: 0.9rem;
+    text-align: end;
+  }
+}
+
+@media (max-width: 25rem) {
+  .todolist-item__delete {
+    font-size: 0.7rem;
+    text-align: end;
+  }
 }
 
 .list-group__icon {

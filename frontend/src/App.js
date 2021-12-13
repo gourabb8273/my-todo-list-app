@@ -7,14 +7,16 @@ import "./App.css";
 import ToDoList from "./components/ToDoList/toDoList";
 
 function App() {
-  let isLoggedIn = Cookies.get("jwtAuth");
+  const buttonStatus = "Logout";
+  const shouldNavBarTitleRender = true;
+  const isLoggedIn = Cookies.get("jwtAuth");
   if (!isLoggedIn) {
     return <Navigate to="/login" />;
   }
 
   return (
     <div className="main-body__container">    
-      <NavBar statusButton="Logout" isValidPage={true} />
+      <NavBar buttonStatus={buttonStatus} shouldNavBarTitleRender={shouldNavBarTitleRender} />
       <div className="todo-container__box">
         <ToDoList />
       </div>

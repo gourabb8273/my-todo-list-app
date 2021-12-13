@@ -5,7 +5,7 @@ import { Modal, Button } from "react-bootstrap";
  *  REUSEABLE MODAL COMPONENT
  */
 function ModalDialog({
-  shouldDisable,
+  shouldModalEnable,
   modalVariant,
   modalName,
   modalBodyTitle,
@@ -45,7 +45,7 @@ function ModalDialog({
     <div className={modalBodyStyle}>
       <Button
         className={modalButtonStyle}
-        disabled={!shouldDisable}
+        disabled={!shouldModalEnable}
         variant={modalVariant}
         onClick={handleShowModal}
       >

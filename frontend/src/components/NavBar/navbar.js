@@ -10,7 +10,7 @@ import { logout } from "../../store/slices/credentialSlice";
 /**
  * REUSEABLE NAVBAR COMPONENT
  */
-function NavBar({ statusButton, isValidPage }) {
+function NavBar({ buttonStatus, shouldNavBarTitleRender }) {
   const history = useNavigate();
   const dispatch = useDispatch();
 
@@ -27,19 +27,19 @@ function NavBar({ statusButton, isValidPage }) {
   return (
     <Navbar className="navbar-header" expand="lg" bg="dark" variant="dark">
       <Container>
-        {isValidPage && (
+        {shouldNavBarTitleRender && (
           <Navbar.Brand className="navbar-header_item">
-            What's The Plan for Today?
+           <h4> What's The Plan for Today?</h4>
           </Navbar.Brand>
         )}
-        {statusButton && (
+        {buttonStatus && (
           <Nav className="me-auto">
             <Nav.Link
               onClick={handleLogout}
               className="navbar-header_link"
               href="/login"
             >
-              {statusButton}
+              {buttonStatus}
             </Nav.Link>
           </Nav>
         )}

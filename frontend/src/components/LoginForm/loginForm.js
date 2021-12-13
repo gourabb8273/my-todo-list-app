@@ -22,6 +22,7 @@ function LoginForm() {
   const history = useNavigate();
   const [cookies, setCookie] = useCookies(["jwtAuth"]);
   const [loginState, setLoginState] = useState(initialState);
+  const shouldNavBarTitleRender = true;
 
   /**
    * SET THE STATE WITH LOGIN CREDENTIALS
@@ -62,8 +63,8 @@ function LoginForm() {
   }
 
   return (
-    <div className="login-container">
-      <NavBar isValidPage={true} />
+    <>
+      <NavBar shouldNavBarTitleRender={shouldNavBarTitleRender} />
       <div className="form-login__container">
         <h3>Please Login </h3>
         <Form className="form-login" onSubmit={handleOnSubmit}>
@@ -107,7 +108,7 @@ function LoginForm() {
           </Button>
         </Form>
       </div>
-    </div>
+    </>
   );
 }
 

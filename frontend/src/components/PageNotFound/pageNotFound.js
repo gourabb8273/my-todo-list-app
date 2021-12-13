@@ -10,6 +10,7 @@ import NavBar from "../NavBar/navbar";
  */
 function PageNotFound() {
   const history = useNavigate();
+  const shouldNavBarTitleRender = false;
 
   /**
    * NAVIGATE TO MAIN PAGE
@@ -21,7 +22,7 @@ function PageNotFound() {
 
   return (
     <div>
-      <NavBar isValidPage={false} />
+      <NavBar shouldNavBarTitleRender={shouldNavBarTitleRender} />
       <div className="page-not__found">
         <h2>404</h2>
         <div className="page-not_found--body">

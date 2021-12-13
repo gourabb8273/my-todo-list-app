@@ -22,7 +22,7 @@ function ToDoList() {
   const listApiURL = "http://localhost:8080/api/list";
   const [taskDescription, setTaskDescription] = useState("");
   const [initialTasks, setInitialTasks] = useState(null);
-  const [searchText, setSearchTasks] = useState("");
+  const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
   const toDoListItem = useSelector((state) => state.todo.toDoList);
 
@@ -79,7 +79,7 @@ function ToDoList() {
   function handleSearchItem(e) {
     e.preventDefault();
     const searchedTask = e.target.value;
-    setSearchTasks(searchedTask);
+    setSearchText(searchedTask);
   }
 
   return (

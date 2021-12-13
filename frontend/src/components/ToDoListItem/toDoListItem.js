@@ -10,7 +10,7 @@ import "./toDoListItem.css";
  */
 function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
   return (
-    <div className="todolist-task__items" key={taskIndex}>
+    <div className="todolist-items" key={taskIndex}>
       <div className="todolist-item__title">
         <h3>
           {taskIndex + 1 + ".  "} {taskItem.taskTitle}
