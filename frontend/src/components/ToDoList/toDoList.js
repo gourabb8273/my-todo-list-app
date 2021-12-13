@@ -34,7 +34,7 @@ function ToDoList() {
       .get(listApiURL)
       .then((response) => {
         setInitialTasks(response.data);
-        dispatch(getItem(response.data.dummyData));
+        dispatch(getItem(response.data.dummyData.toDoList));
       })
       .catch((err) => console.log(err));
   }, []);
@@ -66,11 +66,8 @@ function ToDoList() {
   /**
    * ACTION: DELETE THE SELECTED ITEM
    **/
-  function handleDeleteItem(deleteTask) {
-    const toDoList = toDoListItem.filter(
-      (listItem, listIndex) => listIndex !== deleteTask
-    );
-    dispatch(deleteItem({ toDoList }));
+  function handleDeleteItem(deleteTaskIndex) {    
+    dispatch(deleteItem(deleteTaskIndex));
   }
 
   /**

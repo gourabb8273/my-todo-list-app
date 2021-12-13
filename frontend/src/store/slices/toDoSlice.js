@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import getCurrentDateTime from '../../services/getCurrentDateTime';
+import getCurrentDateTime from "../../services/getCurrentDateTime";
 
 const initialState = {
   toDoList: [],
@@ -26,10 +26,18 @@ const toDoSlice = createSlice({
       return initialState;
     },
     deleteItem(state, action) {
-      return action.payload;
+      const newState = {
+        toDoList: state.toDoList.filter(
+          (listItem, listIndex) => listIndex !== action.payload
+        ),
+      };
+      return newState;
     },
     getItem(state, action) {
-      return action.payload;
+      const newState = {
+        toDoList: action.payload,
+      };
+      return newState;
     },
   },
 });
