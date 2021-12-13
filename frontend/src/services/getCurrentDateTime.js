@@ -18,10 +18,10 @@ function getCurrentDateTime() {
     "December",
   ];
 
-  const d = new Date();
-  const year = d.getFullYear();
-  const day = d.getDate();
-  const month = months[d.getMonth()].slice(0, 3);
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const day = currentDate.getDate();
+  const month = months[currentDate.getMonth()].slice(0, 3);
   const currentDateTime = month + " " + day + ", " + year;
   return currentDateTime;
 }
