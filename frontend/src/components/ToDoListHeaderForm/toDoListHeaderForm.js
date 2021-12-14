@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-import "./toDoHeaderForm.css";
+import "./toDoListHeaderForm.css";
 import ModalDialog from "../ModalDialog/modalDialog";
 
 /**
  * TO DO LIST HEADER FORM COMPONENT
  */
-function ToDoHeaderForm({
+function ToDoListHeaderForm({
   searchText,
   handleSearchItem,
   handleOnSubmit,
@@ -72,4 +72,4 @@ function ToDoHeaderForm({
   );
 }
 
-export default ToDoHeaderForm;
+export default ToDoListHeaderForm;

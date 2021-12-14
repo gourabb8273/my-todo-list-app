@@ -10,7 +10,7 @@ import {
   getItem,
 } from "../../store/slices/toDoSlice";
 import ToDoListItem from "../ToDoListItem/toDoListItem";
-import ToDoHeaderForm from "../ToDoHeaderForm/toDoHeaderForm";
+import ToDoListHeaderForm from "../ToDoListHeaderForm/toDoListHeaderForm";
 import LoadingSpinner from "../LoadingSpinner/loadingSpinner";
 import filterToDoListItem from "../../services/filterToDoListItem";
 import NoTaskAdded from "../NoTaskAdded/noTaskAdded";
@@ -82,7 +82,7 @@ function ToDoList() {
 
   return (
     <div>
-      <ToDoHeaderForm
+      <ToDoListHeaderForm
         taskDescription={taskDescription}
         searchText={searchText}
         handleInputChange={handleInputChange}
