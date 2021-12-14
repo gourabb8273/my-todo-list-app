@@ -11,6 +11,24 @@
   font-size: small;
 }
 
+@media (max-width: 52rem) {
+  .navbar-header_item  {
+    left: 35%;
+  }
+}
+
+@media (max-width: 44rem) {
+  .navbar-header_item  {
+    left: 33%;
+  }
+}
+
+@media (max-width: 25rem) {
+  .navbar-header_item  {
+    left: 15%;
+  }
+}
+
 .navbar-header_item > h4 {
   font-size: 1.5rem;
   font-family: sans-serif;
