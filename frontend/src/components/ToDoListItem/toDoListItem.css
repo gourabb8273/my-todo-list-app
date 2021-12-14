@@ -1,7 +1,7 @@
 .list-group__container {
   display: flex;
   justify-content: space-around;
-  background: rgb(247, 247, 247);    
+  background: rgb(247, 247, 247);
 }
 
 .todolist-items {
@@ -11,23 +11,11 @@
   border: 1px solid rgba(0, 0, 0, 0.123);
   height: 55px;
   margin-left: 2%;
-  margin-right: 2%;  
+  margin-right: 2%;
 }
 
 .todolist-items:hover {
   background: rgba(229, 229, 250, 0.808);
-}
-
-.todolist-items button {
-  margin-left: 100px;
-  margin-top: 5px;
-  height: 45px;
-  width: 80px;
-  font-size: medium;
-  font-style: bold;
-  background: rgb(168, 20, 20);
-  color: white;
-  font-size: medium;
 }
 
 .todolist-item__title {

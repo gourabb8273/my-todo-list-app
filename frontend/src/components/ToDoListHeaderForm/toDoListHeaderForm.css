@@ -1,3 +1,7 @@
+:root {
+  --border-color: rgba(78, 78, 87, 0.596);
+}
+
 .todolist-header__container > h2 {
   margin: 1% 2%;
   color: rgb(36, 14, 10);
@@ -55,7 +59,7 @@
   margin: 1px;
   margin-left: 0px;
   border-radius: 3px;
-  border: 1px solid rgba(78, 78, 87, 0.596);
+  border: 1px solid var(--border-color);
 }
 
 .todolist-form__input[type="text"] {
@@ -93,7 +97,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid rgba(78, 78, 87, 0.596);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .todolist-search:focus {

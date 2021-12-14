@@ -1,10 +1,14 @@
+:root {
+  --background-color: rgba(229, 229, 250, 0.342);
+}
+
 .tasknotadded {
   margin: auto;
-  border: 2px solid rgba(229, 229, 250, 0.342);
+  border: 2px solid var(--background-color);
   margin-top: 3%;
   height: 12rem;
   width: 70%;
-  background: rgba(229, 229, 250, 0.342);
+  background: var(--background-color);
 }
 
 .tasknotadded > h3 {

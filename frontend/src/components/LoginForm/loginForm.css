@@ -1,3 +1,7 @@
+:root{
+  --font-label: "Segoe UI"
+}
+
 .form-login__container {
   border-radius: 5px;
   position: fixed;
@@ -37,7 +41,7 @@
 .form-login__email--label {
   font-size: large;
   font-weight: 500;
-  font-family: "Segoe UI";
+  font-family: var(--font-label);
 }
 
 @media (max-width: 52rem) {
@@ -59,7 +63,7 @@
 .form-login__password--label {
   font-size: large;
   font-weight: 500;
-  font-family: "Segoe UI";
+  font-family: var(--font-label);
 }
 
 @media (max-width: 52rem) {
