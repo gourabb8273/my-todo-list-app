@@ -8,7 +8,7 @@ import ModalDialog from "../ModalDialog/modalDialog";
  * TO DO LIST HEADER FORM COMPONENT
  */
 function ToDoHeaderForm({
-  searchTasks,
+  searchText,
   handleSearchItem,
   handleOnSubmit,
   taskDescription,
@@ -33,9 +33,9 @@ function ToDoHeaderForm({
       <div>
         <input
           disabled={!isListEmpty}
-          className="todolist-form__search"
+          className="todolist-search"
           type="text"
-          value={searchTasks}
+          value={searchText}
           placeholder="Search Here.."
           onChange={handleSearchItem}
         ></input>

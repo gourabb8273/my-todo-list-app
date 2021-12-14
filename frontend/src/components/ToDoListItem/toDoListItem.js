@@ -9,6 +9,14 @@ import "./toDoListItem.css";
  * LIST TO DO ITEM COMPONENT
  */
 function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
+  /**
+   * DELETE SELECTED TASK ITEM
+   */
+  function handleDeleteTask(e) {
+    e.preventDefault();
+    handleDeleteItem(taskIndex);
+  }
+
   return (
     <div className="todolist-items" key={taskIndex}>
       <div className="todolist-item__title">
@@ -25,7 +33,7 @@ function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
         <FontAwesomeIcon
           className="list-group__icon"
           icon={faTrashAlt}
-          onClick={() => handleDeleteItem(taskIndex)}
+          onClick={handleDeleteTask}
         ></FontAwesomeIcon>
       </div>
     </div>

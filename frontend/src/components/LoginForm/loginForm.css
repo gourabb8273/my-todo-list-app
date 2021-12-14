@@ -10,16 +10,9 @@
 }
 
 @media (max-width: 52rem) {
-  .form-login__container {
-    top: 20%;
+  .form-login__container {    
     left: 25%;
     width: 55%;
-    height: 50%;
-  }
-}
-
-@media (max-width: 52rem) {
-  .form-login__container {
     height: 50%;
   }
 }
@@ -44,7 +37,7 @@
 .form-login__email--label {
   font-size: large;
   font-weight: 500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI";
 }
 
 @media (max-width: 52rem) {
@@ -66,7 +59,7 @@
 .form-login__password--label {
   font-size: large;
   font-weight: 500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI";
 }
 
 @media (max-width: 52rem) {

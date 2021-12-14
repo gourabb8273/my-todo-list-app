@@ -11,12 +11,13 @@ import {
 } from "../../store/slices/toDoSlice";
 import ToDoListItem from "../ToDoListItem/toDoListItem";
 import ToDoHeaderForm from "../ToDoHeaderForm/toDoHeaderForm";
-import LoadingSpinner from "../Spinner/LoadingSpinner";
+import LoadingSpinner from "../LoadingSpinner/loadingSpinner";
 import filterToDoListItem from "../../services/filterToDoListItem";
 import NoTaskAdded from "../NoTaskAdded/noTaskAdded";
+import "./toDoList.css";
 
 /**
- * TO DO LIST BODY COMPONENT 
+ * TO DO LIST BODY COMPONENT
  */
 function ToDoList() {
   const listApiURL = "http://localhost:8080/api/list";
@@ -40,7 +41,7 @@ function ToDoList() {
   }, []);
 
   /**
-   * ACTION: DISPATCH THE UPDATED STATE TO STORE
+   *  DISPATCH THE UPDATED STATE TO STORE
    **/
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -48,7 +49,7 @@ function ToDoList() {
   }
 
   /**
-   * ACTION: CHANGE THE STATE OF CURRENT STATE
+   *  CHANGE THE STATE OF CURRENT STATE
    **/
   function handleInputChange(e) {
     e.preventDefault();
@@ -56,7 +57,7 @@ function ToDoList() {
   }
 
   /**
-   * ACTION: CLEAR ALL THE TASKS
+   *  CLEAR ALL THE TASKS
    **/
   function handleClearAll(e) {
     e.preventDefault();
@@ -64,14 +65,14 @@ function ToDoList() {
   }
 
   /**
-   * ACTION: DELETE THE SELECTED ITEM
+   *  DELETE THE SELECTED ITEM
    **/
-  function handleDeleteItem(deleteTaskIndex) {    
+  function handleDeleteItem(deleteTaskIndex) {
     dispatch(deleteItem(deleteTaskIndex));
   }
 
   /**
-   * ACTION: FILTER LIST ITEM DATA AND SET NEW STATE
+   *  FILTER LIST ITEM DATA AND SET NEW STATE
    **/
   function handleSearchItem(e) {
     e.preventDefault();

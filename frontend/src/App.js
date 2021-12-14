@@ -15,8 +15,11 @@ function App() {
   }
 
   return (
-    <div className="main-body__container">    
-      <NavBar buttonStatus={buttonStatus} shouldNavBarTitleRender={shouldNavBarTitleRender} />
+    <div className="main-body__container">
+      <NavBar
+        buttonStatus={buttonStatus}
+        shouldNavBarTitleRender={shouldNavBarTitleRender}
+      />
       <div className="todo-container__box">
         <ToDoList />
       </div>

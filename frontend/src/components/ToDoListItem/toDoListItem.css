@@ -1,7 +1,7 @@
 .list-group__container {
   display: flex;
   justify-content: space-around;
-  background: rgb(247, 247, 247);
+  background: rgb(247, 247, 247);    
 }
 
 .todolist-items {
@@ -11,7 +11,7 @@
   border: 1px solid rgba(0, 0, 0, 0.123);
   height: 55px;
   margin-left: 2%;
-  margin-right: 2%;
+  margin-right: 2%;  
 }
 
 .todolist-items:hover {

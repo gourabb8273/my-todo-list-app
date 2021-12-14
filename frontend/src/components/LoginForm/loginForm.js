@@ -21,7 +21,7 @@ function LoginForm() {
   const dispatch = useDispatch();
   const history = useNavigate();
   const [cookies, setCookie] = useCookies(["jwtAuth"]);
-  const [loginState, setLoginState] = useState(initialState);
+  const [userCredentialState, setUserCredentialState] = useState(initialState);
   const shouldNavBarTitleRender = true;
 
   /**
@@ -30,7 +30,10 @@ function LoginForm() {
   async function handleOnSubmit(e) {
     e.preventDefault();
     try {
-      const response = await axiosInstance.post(loginApiURL, loginState);
+      const response = await axiosInstance.post(
+        loginApiURL,
+        userCredentialState
+      );
       const userCredentialInfo = await response.data;
       setCookie("jwtAuth", userCredentialInfo.userToken, { path: "/" });
       dispatch(login(userCredentialInfo));
@@ -45,8 +48,8 @@ function LoginForm() {
    */
   function handleChangeEmail(e) {
     e.preventDefault();
-    setLoginState({
-      ...loginState,
+    setUserCredentialState({
+      ...userCredentialState,
       userId: e.target.value,
     });
   }
@@ -56,8 +59,8 @@ function LoginForm() {
    */
   function handleChangePassword(e) {
     e.preventDefault();
-    setLoginState({
-      ...loginState,
+    setUserCredentialState({
+      ...userCredentialState,
       password: e.target.value,
     });
   }
@@ -77,8 +80,7 @@ function LoginForm() {
             </Form.Label>
             <Form.Control
               onChange={handleChangeEmail}
-              value={loginState.userId}
-              classNamë="form-login__email--field"
+              value={userCredentialState.userId}             
               type="email"
               placeholder="Enter email"
             />
@@ -93,14 +95,19 @@ function LoginForm() {
             </Form.Label>
             <Form.Control
               onChange={handleChangePassword}
-              value={loginState.password}
+              value={userCredentialState.password}
               type="password"
               placeholder="Password"
             />
           </Form.Group>
           <Button
             className="form-login__button"
-            disabled={!(loginState.userId.length && loginState.password.length)}
+            disabled={
+              !(
+                userCredentialState.userId.length &&
+                userCredentialState.password.length
+              )
+            }
             variant="primary"
             type="submit"
           >

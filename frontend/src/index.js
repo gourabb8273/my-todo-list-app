@@ -11,7 +11,7 @@ import PageNotFound from "./components/PageNotFound/pageNotFound";
 import LoginForm from "./components/LoginForm/loginForm";
 
 /**
- * FINAL INDEX COMPONENT
+ * FINAL INDEX COMPONENT WITH ROUTING
  */
 function IndexRoute() {
   return (

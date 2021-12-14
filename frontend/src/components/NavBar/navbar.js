@@ -25,11 +25,17 @@ function NavBar({ buttonStatus, shouldNavBarTitleRender }) {
   }
 
   return (
-    <Navbar className="navbar-header" expand="lg" bg="dark" variant="dark">
+    <Navbar
+      className="navbar-header"
+      expand="lg"
+      bg="dark"
+      variant="dark"
+      fixed="top"
+    >
       <Container>
         {shouldNavBarTitleRender && (
           <Navbar.Brand className="navbar-header_item">
-           <h4> What's The Plan for Today?</h4>
+            <h4> What's The Plan for Today?</h4>
           </Navbar.Brand>
         )}
         {buttonStatus && (
