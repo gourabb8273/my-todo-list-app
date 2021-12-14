@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
+import "./modalDialog.css";
+
 /**
  *  REUSEABLE MODAL COMPONENT
  */
@@ -13,7 +15,7 @@ function ModalDialog({
   modalCloseName,
   modalActionName,
   handleModalAction,
-  modalBodyStyle,
+  modalButtonBodyStyle,
   modalButtonStyle,
 }) {
   const [showModal, setShowModal] = useState(false);
@@ -42,7 +44,7 @@ function ModalDialog({
   }
 
   return (
-    <div className={modalBodyStyle}>
+    <div className={modalButtonBodyStyle}>
       <Button
         className={modalButtonStyle}
         disabled={!shouldModalEnable}
@@ -59,9 +61,11 @@ function ModalDialog({
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>{modalBodyTitle}</Modal.Title>
+          <Modal.Title className="modal-title">{modalBodyTitle}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{modalBodyDescription}</Modal.Body>
+        <Modal.Body className="modal-description">
+          {modalBodyDescription}
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
             {modalCloseName}

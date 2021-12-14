@@ -24,7 +24,7 @@ function ToDoHeaderForm({
   const modalBodyDescription = "This will remove all your tasks";
   const modalCloseName = "Close";
   const modalActionName = "Clear All";
-  const modalBodyStyle = "todolist-clear";
+  const modalButtonBodyStyle = "todolist-clear";
   const modalButtonStyle = "todolist-clear__button";
 
   return (
@@ -64,7 +64,7 @@ function ToDoHeaderForm({
           modalCloseName={modalCloseName}
           modalActionName={modalActionName}
           handleModalAction={handleClearAll}
-          modalBodyStyle={modalBodyStyle}
+          modalButtonBodyStyle={modalButtonBodyStyle}
           modalButtonStyle={modalButtonStyle}
         />
       </form>
