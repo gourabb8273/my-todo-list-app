@@ -22,8 +22,6 @@ function LoginForm() {
   const history = useNavigate();
   const [_cookies, setCookie] = useCookies(["jwtAuth"]);
   const [userCredentialState, setUserCredentialState] = useState(initialState);
-  const shouldNavBarTitleRender = true;
-
   /**
    * SET THE STATE WITH LOGIN CREDENTIALS
    */
@@ -67,7 +65,7 @@ function LoginForm() {
 
   return (
     <>
-      <NavBar shouldNavBarTitleRender={shouldNavBarTitleRender} />
+      <NavBar shouldNavBarTitleRender />
       <div className="form-login__container">
         <h3>Please Login </h3>
         <Form className="form-login" onSubmit={handleOnSubmit}>
@@ -80,7 +78,7 @@ function LoginForm() {
             </Form.Label>
             <Form.Control
               onChange={handleChangeEmail}
-              value={userCredentialState.userId}             
+              value={userCredentialState.userId}
               type="email"
               placeholder="Enter email"
             />

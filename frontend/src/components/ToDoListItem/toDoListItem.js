@@ -20,9 +20,7 @@ function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
   return (
     <div className="todolist-items" key={taskIndex}>
       <div className="todolist-item__title">
-        <h3>
-          {taskIndex + 1 + ".  "} {taskItem.taskTitle}
-        </h3>
+        <h3>{`${taskIndex + 1}.  ${taskItem.taskTitle}`}</h3>
       </div>
       <div className="todolist-item__date">
         <h5>
