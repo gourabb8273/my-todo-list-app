@@ -4,14 +4,14 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import "./index.css";
 import App from "./App";
 import store from "./store/store";
 import PageNotFound from "./components/PageNotFound/pageNotFound";
 import LoginForm from "./components/LoginForm/loginForm";
+import "./index.css";
 
 /**
- * FINAL INDEX COMPONENT WITH ROUTING
+ * Final index component with routing
  */
 function IndexRoute() {
   return (

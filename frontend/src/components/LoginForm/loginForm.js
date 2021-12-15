@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 import NavBar from "../NavBar/navbar";
-import "./loginForm.css";
 import { login } from "../../store/slices/credentialSlice";
 import axiosInstance from "../../services/AxiosInstance";
+import "./loginForm.css";
 
 /**
- * USER LOGIN COMPONENT
+ * User login component
  */
 function LoginForm() {
   const initialState = {
@@ -23,7 +23,7 @@ function LoginForm() {
   const [_cookies, setCookie] = useCookies(["jwtAuth"]);
   const [userCredentialState, setUserCredentialState] = useState(initialState);
   /**
-   * SET THE STATE WITH LOGIN CREDENTIALS
+   * Set the state with login credential
    */
   async function handleOnSubmit(e) {
     e.preventDefault();
@@ -42,7 +42,7 @@ function LoginForm() {
   }
 
   /**
-   * SET THE LOGIN EMAIL ID
+   * Set the login email id
    */
   function handleChangeEmail(e) {
     e.preventDefault();
@@ -53,7 +53,7 @@ function LoginForm() {
   }
 
   /**
-   * SET THE LOGIN PASSWORD
+   * Set the login password
    */
   function handleChangePassword(e) {
     e.preventDefault();

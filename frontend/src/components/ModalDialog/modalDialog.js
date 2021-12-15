@@ -4,54 +4,54 @@ import { Modal, Button } from "react-bootstrap";
 import "./modalDialog.css";
 
 /**
- *  REUSEABLE MODAL COMPONENT
+ *  Reuseable modal component
  */
 function ModalDialog({
-  shouldModalEnable,
-  modalVariant,
-  modalName,
-  modalBodyTitle,
-  modalBodyDescription,
-  modalCloseName,
-  modalActionName,
-  handleModalAction,
-  modalButtonBodyStyle,
-  modalButtonStyle,
+  shouldEnable,
+  variant,
+  name,
+  bodyTitle,
+  bodyDescription,
+  closeName,
+  actionName,
+  handleAction,
+  buttonBodyStyle,
+  buttonStyle,
 }) {
   const [showModal, setShowModal] = useState(false);
 
   /**
-   * CLOSE THE MODAL
+   * Close the modal
    */
   function handleCloseModal() {
     setShowModal(false);
   }
 
   /**
-   * OEPN THE MODAL
+   * Show the modal
    */
   function handleShowModal() {
     setShowModal(true);
   }
 
   /**
-   * CLOSE THE MODAL AND REMOVE ALL TASKS
+   * Close the modal and remove all tasks
    */
   function handleClearAndDestroy(e) {
     e.preventDefault();
-    handleModalAction(e);
+    handleAction(e);
     handleCloseModal();
   }
 
   return (
-    <div className={modalButtonBodyStyle}>
+    <div className={buttonBodyStyle}>
       <Button
-        className={modalButtonStyle}
-        disabled={!shouldModalEnable}
-        variant={modalVariant}
+        className={buttonStyle}
+        disabled={!shouldEnable}
+        variant={variant}
         onClick={handleShowModal}
       >
-        {modalName}
+        {name}
       </Button>
 
       <Modal
@@ -61,17 +61,15 @@ function ModalDialog({
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title className="modal-title">{modalBodyTitle}</Modal.Title>
+          <Modal.Title className="modal-title">{bodyTitle}</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="modal-description">
-          {modalBodyDescription}
-        </Modal.Body>
+        <Modal.Body className="modal-description">{bodyDescription}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
-            {modalCloseName}
+            {closeName}
           </Button>
           <Button variant="danger" onClick={handleClearAndDestroy}>
-            {modalActionName}
+            {actionName}
           </Button>
         </Modal.Footer>
       </Modal>

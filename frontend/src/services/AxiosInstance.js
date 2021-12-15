@@ -1,13 +1,11 @@
 import axios from "axios";
-import Cookies from "js-cookie";
 
+const apiURL ="http:localhost:8080";
 const axiosInstance = axios.create({
-  baseURL: "http:localhost:8080",
+  apiURL
 });
 
-axiosInstance.interceptors.request.use((config) => {
-  let cookies = Cookies.get("jwtAuth");
-  console.log(cookies);
+axiosInstance.interceptors.request.use((config) => {   
   return config;
 });
 

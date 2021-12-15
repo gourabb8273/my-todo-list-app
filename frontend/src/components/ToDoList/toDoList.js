@@ -14,10 +14,10 @@ import ToDoListHeaderForm from "../ToDoListHeaderForm/toDoListHeaderForm";
 import LoadingSpinner from "../LoadingSpinner/loadingSpinner";
 import filterToDoListItem from "../../services/filterToDoListItem";
 import NoTaskAdded from "../NoTaskAdded/noTaskAdded";
-import "./toDoList.css";
+import "../../../src/common.css";
 
 /**
- * TO DO LIST BODY COMPONENT
+ * To do list body component
  */
 function ToDoList() {
   const listApiURL = "http://localhost:8080/api/list";
@@ -28,7 +28,7 @@ function ToDoList() {
   const toDoListItem = useSelector((state) => state.todo.toDoList);
 
   /**
-   *  FETCHING INITIAL DATA
+   *  Fetching initial data
    */
   useEffect(() => {
     axios
@@ -41,7 +41,7 @@ function ToDoList() {
   }, []);
 
   /**
-   *  DISPATCH THE UPDATED STATE TO STORE
+   *  Dispatch the updated state to store
    **/
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -49,7 +49,7 @@ function ToDoList() {
   }
 
   /**
-   *  CHANGE THE STATE OF CURRENT STATE
+   *  Change task description to current state
    **/
   function handleInputChange(e) {
     e.preventDefault();
@@ -57,7 +57,7 @@ function ToDoList() {
   }
 
   /**
-   *  CLEAR ALL THE TASKS
+   *  Clear all the tasks
    **/
   function handleClearAll(e) {
     e.preventDefault();
@@ -65,14 +65,14 @@ function ToDoList() {
   }
 
   /**
-   *  DELETE THE SELECTED ITEM
+   *  Delete the selected item
    **/
   function handleDeleteItem(deleteTaskIndex) {
     dispatch(deleteItem(deleteTaskIndex));
   }
 
   /**
-   *  FILTER LIST ITEM DATA AND SET NEW STATE
+   *  Dispatch searched task to filter the store
    **/
   function handleSearchItem(e) {
     e.preventDefault();

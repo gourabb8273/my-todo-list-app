@@ -1,5 +1,5 @@
 /**
- * FILTER TO DO LIST ITEM ON SEARCH VALUE
+ * Filter to do list item on given search item
  */
 function filterToDoListItem(toDoListItem, searchText) {
   const filteredListItem = toDoListItem.filter((taskItem) =>

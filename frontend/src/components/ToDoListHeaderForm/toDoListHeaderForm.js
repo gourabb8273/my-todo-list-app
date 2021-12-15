@@ -1,11 +1,11 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-import "./toDoListHeaderForm.css";
 import ModalDialog from "../ModalDialog/modalDialog";
+import "./toDoListHeaderForm.css";
 
 /**
- * TO DO LIST HEADER FORM COMPONENT
+ * To do list header form component
  */
 function ToDoListHeaderForm({
   searchText,
@@ -17,15 +17,15 @@ function ToDoListHeaderForm({
   isListEmpty,
   isTextEntered,
 }) {
-  // ASSIGNING PROPS DATA FOR CLEAR ALL LIST MODAL
-  const modalVariant = "danger";
-  const modalName = "Clear All";
-  const modalBodyTitle = "Do you really want to clear all?";
-  const modalBodyDescription = "This will remove all your tasks";
-  const modalCloseName = "Close";
-  const modalActionName = "Clear All";
-  const modalButtonBodyStyle = "todolist-clear";
-  const modalButtonStyle = "todolist-clear__button";
+  // Assigning props data for clear all list modal
+  const variant = "danger";
+  const Name = "Clear All";
+  const bodyTitle = "Do you really want to clear all?";
+  const bodyDescription = "This will remove all your tasks";
+  const closeName = "Close";
+  const actionName = "Clear All";
+  const buttonBodyStyle = "todolist-clear";
+  const buttonStyle = "todolist-clear__button";
 
   return (
     <div className="todolist-header__container">
@@ -56,16 +56,16 @@ function ToDoListHeaderForm({
           Add
         </Button>
         <ModalDialog
-          shouldModalEnable={isListEmpty}
-          modalVariant={modalVariant}
-          modalName={modalName}
-          modalBodyTitle={modalBodyTitle}
-          modalBodyDescription={modalBodyDescription}
-          modalCloseName={modalCloseName}
-          modalActionName={modalActionName}
-          handleModalAction={handleClearAll}
-          modalButtonBodyStyle={modalButtonBodyStyle}
-          modalButtonStyle={modalButtonStyle}
+          shouldEnable={isListEmpty}
+          variant={variant}
+          name={Name}
+          bodyTitle={bodyTitle}
+          bodyDescription={bodyDescription}
+          closeName={closeName}
+          actionName={actionName}
+          handleAction={handleClearAll}
+          buttonBodyStyle={buttonBodyStyle}
+          buttonStyle={buttonStyle}
         />
       </form>
     </div>

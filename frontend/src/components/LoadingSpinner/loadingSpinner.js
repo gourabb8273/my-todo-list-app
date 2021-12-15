@@ -1,10 +1,10 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
 
-import "./loadingSpinner.css";
+import "../../../src/common.css";
 
 /**
- * LOADING SPINNER COMPONENT
+ * Loading spinner component
  */
 function LoadingSpinner() {
   return (

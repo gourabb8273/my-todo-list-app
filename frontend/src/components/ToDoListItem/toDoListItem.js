@@ -6,11 +6,11 @@ import { Badge } from "react-bootstrap";
 import "./toDoListItem.css";
 
 /**
- * LIST TO DO ITEM COMPONENT
+ * List to do item component
  */
 function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
   /**
-   * DELETE SELECTED TASK ITEM
+   * Delete the selected task item
    */
   function handleDeleteTask(e) {
     e.preventDefault();

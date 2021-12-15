@@ -4,18 +4,18 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-import "./navbar.css";
 import { logout } from "../../store/slices/credentialSlice";
+import "./navbar.css";
 
 /**
- * REUSEABLE NAVBAR COMPONENT
+ * Reusable navbar component
  */
 function NavBar({ buttonStatus, shouldNavBarTitleRender }) {
   const history = useNavigate();
   const dispatch = useDispatch();
 
   /**
-   *  LOGOUT THE USER SESSION
+   *  Logout the user session
    */
   function handleLogout(e) {
     e.preventDefault();

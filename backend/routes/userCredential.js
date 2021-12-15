@@ -10,7 +10,7 @@ route.post("/", (req, res, next) => {
   const secretKey = process.env.SECRET_KEY;
   const saltRounds = 10;
 
-  // HASHING PASSWORD
+  // Hashing password
   bcrypt.genSalt(saltRounds, function (err, salt) {
     bcrypt.hash(password, salt, function (err, hash) {
       const token = jwt.sign(

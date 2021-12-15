@@ -28,5 +28,5 @@ app.use("/", (req, res, next) => {
 });
 
 server.listen(PORT, () => {
-  console.log("server is running");
+  console.log(`server is running at port ${PORT}`);
 });

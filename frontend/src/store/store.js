@@ -10,6 +10,9 @@ import {
 import toDoReducer from "./slices/toDoSlice";
 import credentialReducer from "./slices/credentialSlice";
 
+/**
+ * Redux store
+ */
 const reduxStateSyncConfig = {};
 
 const reducer = combineReducers({

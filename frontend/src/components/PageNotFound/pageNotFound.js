@@ -2,18 +2,18 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
-import "./pageNotFound.css";
 import NavBar from "../NavBar/navbar";
+import "./pageNotFound.css";
 
 /**
- * PAGE NOT FOUND 404 COMPONENT
+ * Page not found 404 component
  */
 function PageNotFound() {
   const history = useNavigate();
   const shouldNavBarTitleRender = false;
 
   /**
-   * NAVIGATE TO MAIN PAGE
+   * Navigate to main page
    */
   function handleRedirect(e) {
     e.preventDefault();
