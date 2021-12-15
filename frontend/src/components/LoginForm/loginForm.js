@@ -20,7 +20,7 @@ function LoginForm() {
   const loginApiURL = "http://localhost:8080/api/login";
   const dispatch = useDispatch();
   const history = useNavigate();
-  const [cookies, setCookie] = useCookies(["jwtAuth"]);
+  const [_cookies, setCookie] = useCookies(["jwtAuth"]);
   const [userCredentialState, setUserCredentialState] = useState(initialState);
   const shouldNavBarTitleRender = true;
 

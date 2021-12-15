@@ -17,7 +17,7 @@ const credentialSlice = createSlice({
       };
       return newState;
     },
-    logout(state, action) {
+    logout(_state, _action) {
       return initialState;
     },
   },

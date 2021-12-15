@@ -22,18 +22,18 @@ const toDoSlice = createSlice({
       };
       return newState;
     },
-    removeAll(state, action) {
+    removeAll(_state, _action) {
       return initialState;
     },
     deleteItem(state, action) {
       const newState = {
         toDoList: state.toDoList.filter(
-          (listItem, listIndex) => listIndex !== action.payload
+          (_listItem, listIndex) => listIndex !== action.payload
         ),
       };
       return newState;
     },
-    getItem(state, action) {
+    getItem(_state, action) {
       const newState = {
         toDoList: action.payload,
       };
