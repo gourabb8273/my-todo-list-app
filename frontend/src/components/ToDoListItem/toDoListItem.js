@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "react-bootstrap";
 
 import "./toDoListItem.css";
@@ -8,13 +8,26 @@ import "./toDoListItem.css";
 /**
  * List to do item component
  */
-function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
+function ToDoListItem({
+  taskItem,
+  taskIndex,
+  handleDeleteItem,
+  handleEditItem,
+}) {
   /**
    * Delete the selected task item
    */
   function handleDeleteTask(e) {
     e.preventDefault();
     handleDeleteItem(taskIndex);
+  }
+
+  /**
+   * Edit the selected task item
+   */
+  function handleEditTask(e) {
+    e.preventDefault();
+    handleEditItem(taskIndex);
   }
 
   return (
@@ -27,9 +40,14 @@ function ToDoListItem({ taskItem, taskIndex, handleDeleteItem }) {
           <Badge bg="success">{taskItem.createdDate}</Badge>
         </h5>
       </div>
-      <div className="todolist-item__delete">
+      <div className="todolist-item__icons">
         <FontAwesomeIcon
-          className="list-group__icon"
+          className="list-group__edit"
+          icon={faEdit}
+          onClick={handleEditTask}
+        ></FontAwesomeIcon>
+        <FontAwesomeIcon
+          className="list-group__delete"
           icon={faTrashAlt}
           onClick={handleDeleteTask}
         ></FontAwesomeIcon>

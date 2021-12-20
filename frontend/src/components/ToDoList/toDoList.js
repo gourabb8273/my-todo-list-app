@@ -8,6 +8,7 @@ import {
   removeAll,
   deleteItem,
   getItem,
+  editItem,
 } from "../../store/slices/toDoSlice";
 import ToDoListItem from "../ToDoListItem/toDoListItem";
 import ToDoListHeaderForm from "../ToDoListHeaderForm/toDoListHeaderForm";
@@ -24,6 +25,8 @@ function ToDoList() {
   const [taskDescription, setTaskDescription] = useState("");
   const [initialTasks, setInitialTasks] = useState(null);
   const [searchText, setSearchText] = useState("");
+  const [editButtonState, setEditButtonState] = useState(false);
+  const [editTaskId, setEditTaskId] = useState(null);
   const dispatch = useDispatch();
   const toDoListItem = useSelector((state) => state.todo.toDoList);
 
@@ -41,11 +44,24 @@ function ToDoList() {
   }, []);
 
   /**
-   *  Dispatch the updated state to store
+   *  Dispatch the new state to store
    **/
   function handleOnSubmit(e) {
     e.preventDefault();
     dispatch(addItem(taskDescription), setTaskDescription(""));
+  }
+
+  /**
+   *  Dispatch the edited state to store
+   **/
+  function handleOnEdit(e) {
+    e.preventDefault();
+    dispatch(
+      editItem({ taskDescription, editTaskId }),
+      setTaskDescription(""),
+      setEditButtonState(false),
+      setEditButtonState(false)
+    );
   }
 
   /**
@@ -72,6 +88,19 @@ function ToDoList() {
   }
 
   /**
+   *  Change the edited task description to current state
+   **/
+  function handleEditItem(editTaskIndex) {
+    console.log(editTaskIndex);
+    const taskItemYetToEdit = toDoListItem.find(
+      (_listItem, listIndex) => listIndex === editTaskIndex
+    ).taskTitle;
+    setTaskDescription(taskItemYetToEdit);
+    setEditButtonState(true);
+    setEditTaskId(editTaskIndex);
+  }
+
+  /**
    *  Dispatch searched task to filter the store
    **/
   function handleSearchItem(e) {
@@ -87,10 +116,12 @@ function ToDoList() {
         searchText={searchText}
         handleInputChange={handleInputChange}
         handleOnSubmit={handleOnSubmit}
+        handleOnEdit={handleOnEdit}
         handleSearchItem={handleSearchItem}
         handleClearAll={handleClearAll}
         isListEmpty={!!toDoListItem.length}
         isTextEntered={!!taskDescription.length}
+        editButtonState={editButtonState}
       />
       <div className="todolist-container">
         {initialTasks ? (
@@ -103,6 +134,7 @@ function ToDoList() {
                     taskIndex={taskIndex}
                     taskItem={taskItem}
                     handleDeleteItem={handleDeleteItem}
+                    handleEditItem={handleEditItem}
                   />
                 );
               }

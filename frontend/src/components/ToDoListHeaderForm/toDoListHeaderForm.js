@@ -11,11 +11,13 @@ function ToDoListHeaderForm({
   searchText,
   handleSearchItem,
   handleOnSubmit,
+  handleOnEdit,
   taskDescription,
   handleInputChange,
   handleClearAll,
   isListEmpty,
   isTextEntered,
+  editButtonState,
 }) {
   // Assigning props data for clear all list modal
   const variant = "danger";
@@ -48,13 +50,24 @@ function ToDoListHeaderForm({
           value={taskDescription}
           onChange={handleInputChange}
         ></input>
-        <Button
-          onClick={handleOnSubmit}
-          disabled={!isTextEntered}
-          className="todolist-form__submit"
-        >
-          Add
-        </Button>
+        {editButtonState ? (
+          <Button
+            onClick={handleOnEdit}
+            disabled={!isTextEntered}
+            className="todolist-form__submit"
+          >
+            Save
+          </Button>
+        ) : (
+          <Button
+            onClick={handleOnSubmit}
+            disabled={!isTextEntered}
+            className="todolist-form__submit"
+          >
+            Add
+          </Button>
+        )}
+
         <ModalDialog
           shouldEnable={isListEmpty}
           variant={variant}

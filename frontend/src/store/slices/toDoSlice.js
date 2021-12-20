@@ -39,8 +39,24 @@ const toDoSlice = createSlice({
       };
       return newState;
     },
+    editItem(state, action) {
+      const updatedIndex = action.payload.editTaskId;
+      const updatedTaskDescription = action.payload.taskDescription;
+      const newState = {
+        toDoList: [
+          ...state.toDoList.slice(0, updatedIndex),
+          {
+            taskTitle: updatedTaskDescription,
+            createdDate: getCurrentDateTime(),
+          },
+          ...state.toDoList.slice(updatedIndex + 1),
+        ],
+      };
+      return newState;
+    },
   },
 });
 
-export const { addItem, removeAll, deleteItem, getItem } = toDoSlice.actions;
+export const { addItem, removeAll, deleteItem, getItem, editItem } =
+  toDoSlice.actions;
 export default toDoSlice.reducer;
