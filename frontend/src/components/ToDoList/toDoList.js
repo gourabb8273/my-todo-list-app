@@ -60,7 +60,7 @@ function ToDoList() {
       editItem({ taskDescription, editTaskId }),
       setTaskDescription(""),
       setEditButtonState(false),
-      setEditButtonState(false)
+      setEditTaskId(null)
     );
   }
 
@@ -84,7 +84,12 @@ function ToDoList() {
    *  Delete the selected item
    **/
   function handleDeleteItem(deleteTaskIndex) {
-    dispatch(deleteItem(deleteTaskIndex));
+    dispatch(
+      deleteItem(deleteTaskIndex),
+      setTaskDescription(""),
+      setEditButtonState(false),
+      setEditTaskId(null)
+    );
   }
 
   /**
